@@ -1,0 +1,38 @@
+/* Banner */
+/* .mainPage_banner {
+
+} */
+.mainPage_banner-img {
+    width: 100%;
+    height: 440px;
+    object-fit: cover;
+}
+
+.container__products {
+    display: flex;
+    width: 80%;
+    margin: auto;
+}
+.container__products-nav {
+    flex: 1;
+    padding: 16px 16px;
+}
+.container__products-nav button {
+    display: block;
+    padding: 16px 0 0;
+    font-weight: bold;
+}
+.container__products-nav button:hover {
+    border-bottom: solid 1px #ccc;
+}
+.container__products-products {
+    flex: 6;
+
+}
+.container__products .containerItem {
+    display: inline-block;
+    width: 200px;
+    margin: 0 8px 8px;
+    border: solid 1px #ccc;
+    padding: 8px;
+}

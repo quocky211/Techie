@@ -1,0 +1,51 @@
+.aboutUs {
+    width: 80%;
+    background-color: #ccc;
+    display: flex;
+    padding: 24px 8px;
+    margin: 16px auto;
+}
+.aboutUs__nav {
+    flex: 1;
+    padding: 0;
+    padding: 8px;
+
+}
+.aboutUs__nav-name {
+    padding-bottom: 12px;
+    border-bottom: solid 1px #000;
+    width: 80%;
+    margin: 24px auto 0;
+    
+}
+.aboutUs__nav-main {
+    padding: 12px 4px;
+}
+.aboutUs__nav-main button,
+.aboutUs__nav-main a {
+    display: flex;
+    padding: 8px 4px;
+    text-align: start;
+    color: #000;
+}
+.aboutUs__nav-main a {
+    font-size: 15px;
+}
+.aboutUs__main {
+    flex: 3;
+    text-align: start;
+    padding: 8px;
+}
+/*  */
+/*  */
+.aboutUs__main h4 {
+    font-weight: 500;
+    font-size: 28px;
+    margin: 0;
+}
+.aboutUs__main h5 {
+    font-size: 18px;
+}
+.aboutUs__main h6 {
+    font-size: 16px;
+}
