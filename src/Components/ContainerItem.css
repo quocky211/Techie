@@ -22,10 +22,10 @@
 
 } */
 .containerItem_infor .buy-btn {
-    padding: 8px;
     background-color: #aaa69d;
     color: white;
     border-radius: 8px;
+    padding: 8px;
     margin-right: 8px;
     margin-bottom: 4px;
 }

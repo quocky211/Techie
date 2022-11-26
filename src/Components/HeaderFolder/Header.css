@@ -87,6 +87,7 @@ button {
     padding: 8px 12px;
     border-radius: 25px;
     line-height: 16px;
+    margin-left: 30px;
 }
 .header-right_item .logIn-btn a{
     color: #fff;

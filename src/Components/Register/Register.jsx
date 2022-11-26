@@ -35,7 +35,7 @@ function Register()
                     value={fullname} onChange={e => handleChange(e)}/>
                     <input type="email" name="email"placeholder="Email" value={email} onChange={e => handleChange(e)}/>
                     <input type="password" name="password"placeholder="Mật khẩu" value={password} onChange={e => handleChange(e)}/>
-                    <button type="submit" name="submit">Đăng ký</button>
+                    <Link to="/MainPage"><button type="submit" name="submit">Đăng ký</button></Link>
                 </form>
                 <Link to="/Login"><p>Bạn đã có tài khoản? Đăng nhập ngay </p></Link>
             </div>

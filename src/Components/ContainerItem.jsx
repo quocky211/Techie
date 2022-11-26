@@ -9,14 +9,13 @@ function ContainerItem(img, name, price) {
     return (
         <div className="containerItem">
             <button onClick={() => setActive("profile")}>
-                <img src={img} className="ContainerItem_image"/>
+                <img src={img} alt="sanpham" className="ContainerItem_image"/>
                 <p className="containerItem_name">{name}</p>
             </button>
             
             <div className="containerItem_infor">
                 <p className="containerItem_infor-price">{price}</p>
                 <button className="buy-btn">Mua ngay</button>
-                <button className="addToCart-btn">Thêm vào giỏ hàng</button>
             </div>
         </div>
     )

@@ -17,7 +17,7 @@ function Login() {
         <form action="">
           <input type="text" name="" id="" placeholder="Email hoặc số điện thoại"/>
           <input type="text" name="" id="" placeholder="Mật khẩu" />
-          <button>Đăng nhập</button>
+          <Link to="/MainPage"><button>Đăng nhập</button></Link>
         </form>
         <br>
         </br>
