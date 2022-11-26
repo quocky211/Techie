@@ -2,6 +2,7 @@ import "./Login.css";
 import FbIcon from "../Images/facebook.ico";
 import GgIcon from "../Images/google.ico";
 import logo from "../Images/logo.webp";
+import { Link } from "react-router-dom";
 
 function Login() {
   return (
@@ -18,8 +19,9 @@ function Login() {
           <input type="text" name="" id="" placeholder="Mật khẩu" />
           <button>Đăng nhập</button>
         </form>
-        <a href="#">Quên mật khẩu</a>
-        <p>Bạn chưa có tài khoản? <a href="#">Đăng ký ngay</a></p>
+        <br>
+        </br>
+        <Link to="/Register"><p>Bạn chưa có tài khoản? Đăng ký ngay</p></Link>
         <p>Hoặc đăng nhập bằng</p>
         <div className="loginForm-icon">
           <button>

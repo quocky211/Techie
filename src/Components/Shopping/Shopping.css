@@ -1,0 +1,54 @@
+.main-container{
+    width: 80%;
+    padding: 24px 8px;
+    margin: 16px auto;
+    display: flex;
+    text-align: justify;
+}
+.products{
+    flex: 3;
+}
+.cal-money{
+    flex: 1.2;
+}
+.discount{
+
+}
+.enter-voucher{
+    /* display: flex; */
+}
+.enter-voucher input{
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 10px;
+}
+.enter-voucher button{
+
+    font-size: 16px;
+    background-color: #5A82E7;
+    color: white;
+    padding: 10px;
+    margin-left: 15px;
+    border: #0b3296 2px solid;
+    border-radius: 10px;
+    float:right;
+} 
+.money p{
+    font-size: 18px;
+}
+.money span{
+    font-size: 18px;
+    font-weight: bold;
+    color: red;
+    float: right;
+}
+.buy-btn{
+    text-align: center!;
+    font-size: 18px;
+    background-color: #6851A8;
+    width: 100%;
+    color: white;
+    padding: 10px;
+    border: #0b3296 2px solid;
+    border-radius: 10px;
+}

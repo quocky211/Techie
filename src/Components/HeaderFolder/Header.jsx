@@ -7,11 +7,13 @@ import searchIcon from "../Images/black-search-icon.png";
 import MainPage from "../MainPageFolder/MainPage";
 import Products from "../ProductFolder/Products";
 import AboutUs from "../AboutUsFolder/AboutUs";
+import Register from "../Register/Register"
+import Shopping from "../Shopping/Shopping"
+import ShipAddress from "../ShipAddress/ShipAddress";
 // import banner from "../Images/banner.jpg";
 import { NavLink as Link, NavLink } from "react-router-dom";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from "../LoginFolder/Login";
-import styled from "styled-components";
 
 function Header() {
     return (
@@ -40,7 +42,7 @@ function Header() {
                     </div>
 
                     <div className="header-right_item">
-                        <button><img src={shoppingIcon} /></button>
+                        <Link to="/Shoppingcart"><img src={shoppingIcon} alt="cart"/></Link>
                         <button className="logIn-btn"><NavLink to="/Login">Đăng nhập</NavLink></button>
                     </div>
                 </div>
@@ -52,6 +54,9 @@ function Header() {
                     <Route path='/Products' element={<Products />} />
                     <Route path='/AboutUs' element={<AboutUs />} />
                     <Route path='/Login' element={<Login />} />
+                    <Route path="/Shoppingcart" element={<Shopping/>}/>
+                    <Route path='/Register' element={<Register />} />
+                    <Route path='/ShipAddress' element={<ShipAddress/>} />
                 </Routes>
             </div>
         </Router>

@@ -1,0 +1,18 @@
+.main-container-ship{
+    font-size: 18px;
+}
+.nav ul{
+    display: flex;
+    list-style-type: none;
+}
+.nav ul li{
+    margin:0 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.nav ul li:nth-child(2){
+    color: darkblue;
+}
+.nav ul li:hover{
+    color: darkblue;
+}
