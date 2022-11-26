@@ -13,10 +13,16 @@ import ProductsMouse from "./ProductsMouse";
 import ProductsSpeaker from "./ProductsSpeaker";
 import ProductsCharger from "./ProductsCharger";
 import ProductsChargerBackup from "./ProductsChargerBackup";
-
+import axios from 'axios';
 
 
 function Products() {
+    
+    //npm install --save-exact axios@0.21.4
+    
+    axios.get('http://demoapiiii.somee.com/api/ServiceController/GetAllSP')
+    .then(res => console.log("check:", res.data));
+    
     const [active, setActive] = useState("ProductsHeadphone");
     return (
         <div>
