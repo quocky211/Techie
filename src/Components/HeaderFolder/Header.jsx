@@ -49,7 +49,6 @@ function Header() {
             </div>         
             <div className="container">
                 <Routes>
-                    <Route path="/" element={<MainPage/>}></Route>
                     <Route path='/MainPage' element={<MainPage />} />
                     <Route path='/Products' element={<Products />} />
                     <Route path='/AboutUs' element={<AboutUs />} />
