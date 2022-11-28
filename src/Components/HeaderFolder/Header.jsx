@@ -17,8 +17,6 @@ import Login from "../LoginFolder/Login";
 
 function Header() {
     return (
-        <Router>
-             
             <div className="header">
                 <div className="header-left">
                     <a href="#">
@@ -47,19 +45,6 @@ function Header() {
                     </div>
                 </div>
             </div>         
-            <div className="container">
-                <Routes>
-                    <Route path='/MainPage' element={<MainPage />} />
-                    <Route path='/Products' element={<Products />} />
-                    <Route path='/AboutUs' element={<AboutUs />} />
-                    <Route path='/Login' element={<Login />} />
-                    <Route path="/Shoppingcart" element={<Shopping/>}/>
-                    <Route path='/Register' element={<Register />} />
-                    <Route path='/ShipAddress' element={<ShipAddress/>} />
-                </Routes>
-            </div>
-        </Router>
-
     );
 
 }
