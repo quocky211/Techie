@@ -26,7 +26,7 @@ function MainPage() {
             <div className="bestSeller">
                 <h3 className="bestSeller_name name">Bán chạy</h3>
                 <div className="bestSeller_product product">
-                    {list.map((item,index)=> item.loai==="mouse"
+                    {list.map((item,index)=> item.loai==="loa"
                     &&(ContainerItem(item.hinh, item.name, item.price)))} 
                 </div>
             </div>
