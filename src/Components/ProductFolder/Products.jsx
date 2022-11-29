@@ -13,16 +13,10 @@ import ProductsMouse from "./ProductsMouse";
 import ProductsSpeaker from "./ProductsSpeaker";
 import ProductsCharger from "./ProductsCharger";
 import ProductsChargerBackup from "./ProductsChargerBackup";
-import axios from 'axios';
+
 
 
 function Products() {
-    
-    //npm install --save-exact axios@0.21.4
-    
-    axios.get('http://demoapiiii.somee.com/api/ServiceController/GetAllSP')
-    .then(res => console.log("check:", res.data));
-    
     const [active, setActive] = useState("ProductsHeadphone");
     return (
         <div>
@@ -35,9 +29,9 @@ function Products() {
                     <button onClick={() => setActive("ProductsHeadphone")}>Tai nghe</button>
                     <button onClick={() => setActive("ProductsKeyboard")}>Bàn phím</button>
                     <button onClick={() => setActive("ProductsMouse")}>Chuột</button>
-                    <button onClick={() => setActive("ProductsSpeaker")}>Sạc / Cáp</button>
-                    <button onClick={() => setActive("ProductsCharger")}>Sạc dự phòng</button>
-                    <button onClick={() => setActive("ProductsChargerBackup")}>Loa</button>
+                    <button onClick={() => setActive("ProductsCharger")}>Sạc / Cáp</button>
+                    <button onClick={() => setActive("ProductsChargerBackup")}>Sạc dự phòng</button>
+                    <button onClick={() => setActive("ProductsSpeaker")}>Loa</button>
                 </div>
 
                 <div className="container__products-products">
