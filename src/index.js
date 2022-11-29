@@ -10,11 +10,13 @@ import Shopping from "./Components/Shopping/Shopping";
 import Login from "./Components/LoginFolder/Login";
 import Register from "./Components/Register/Register";
 import ShipAddress from "./Components/ShipAddress/ShipAddress";
+import ErrorPage from "./Components/Error/error-page";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
