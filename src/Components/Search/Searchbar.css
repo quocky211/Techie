@@ -1,0 +1,18 @@
+button {
+  border: 0;
+  cursor: pointer;
+  background-color: transparent;
+}
+.header-right {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  padding-right: 12px;
+}
+.header-right_search {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 27px;
+  width: 220px;
+}
