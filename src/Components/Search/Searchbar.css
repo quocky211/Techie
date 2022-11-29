@@ -13,27 +13,6 @@ button {
   position: relative;
   display: flex;
   align-items: center;
-  /* padding: 0 8px; */
-}
-.header-right_search form {
-  display: flex;
-}
-.header-right_search form:focus {
-  border: 0;
-}
-.header-right_search input {
   height: 27px;
   width: 220px;
-  border-radius: 25px;
-  padding: 4px 16px;
-  border: 0;
-  background-color: rgba(204, 204, 204, 0.5);
-}
-.header-right_search button {
-  position: absolute;
-  right: 0;
-  width: 52px;
-  height: 35px;
-  border-bottom-right-radius: 25px;
-  border-top-right-radius: 25px;
 }
