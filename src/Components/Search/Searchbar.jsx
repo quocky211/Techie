@@ -3,32 +3,51 @@ import Select, { components } from "react-select";
 import React, { useState } from "react";
 import "./Searchbar.css";
 import searchIcon from "../Images/black-search-icon.png";
+import axios from "axios";
 
-const options = [
-  { value: "headphone1", label: "Headphone 1" },
-  { value: "headphone2", label: "Headphone 2" },
-  { value: "headphone3", label: "Headphone 3" },
-  { value: "headphone4", label: "Headphone 4" },
-  { value: "headphone5", label: "Headphone 5" },
-  { value: "headphone6", label: "Headphone 6" },
-  { value: "headphone7", label: "Headphone 7" },
-  { value: "headphone8", label: "Headphone 8" },
-  { value: "headphone9", label: "Headphone 9" },
-];
+var options = [];
 
-const DropdownIndicator = props => {
+const DropdownIndicator = (props) => {
   return (
     <components.DropdownIndicator {...props}>
-	  <img src={searchIcon} alt="Search icon" />
+      <img src={searchIcon} alt="Search icon" />
     </components.DropdownIndicator>
   );
 };
+
+const customStyles = {
+  // control represent the select component
+  control: (provided) => ({
+    ...provided,
+    width: "220px",
+  }),
+};
+
+function ParseResponse(response) {
+  response.forEach((element) => {
+    var singleitem = {};
+    singleitem["value"] = element.name.toLowerCase();
+    singleitem["label"] = element.name;
+    options.push(singleitem);
+  });
+}
+
+axios
+  .get("http://demoapiiii.somee.com/api/ServiceController/GetAllSP")
+  .then(function (response) {
+    ParseResponse(response.data);
+  });
 
 function Searchbar() {
   return (
     <div className="header-right">
       <div className="header-right_search">
-        <Select options={options} components={{ DropdownIndicator }} />
+        <Select
+          styles={customStyles}
+          placeholder={"Tìm kiếm sản phẩm"}
+          options={options}
+          components={{ DropdownIndicator }}
+        />
       </div>
     </div>
   );
