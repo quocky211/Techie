@@ -19,12 +19,24 @@ Phúc (
 
 -Chỉnh bố cục component App.js 
 )
+Deadline t3 tuần sau: 
+
+{
 
 Chuyển thanh tìm kiếm bên phải kế bên giỏ hàng.
+
 Chuyển tất cả sản phẩm thêm vào giỏ hàng.
+
 Thêm trang thông tin giao hàng
+
 Thêm trang thanh toán
+
 Thêm trang Chi tiết sản phẩm
+
 Bộ lọc trang chi tiết sản phẩm.
+
 Trang giới thiệu sp -> danh mục trang -> link open in new windows
+
 spacing giữa product và slideshow, banner và Footer
+
+}
