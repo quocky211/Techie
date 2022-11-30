@@ -14,7 +14,7 @@
 .aboutUs__nav-name {
     padding-bottom: 12px;
     border-bottom: solid 1px #000;
-    width: 80%;
+    /* width: 80%; */
     margin: 24px auto 0;
     
 }
@@ -24,17 +24,17 @@
 .aboutUs__nav-main button,
 .aboutUs__nav-main a {
     display: flex;
+    font-size: 20px;
     padding: 8px 4px;
     text-align: start;
     color: #000;
-}
-.aboutUs__nav-main a {
-    font-size: 15px;
 }
 .aboutUs__main {
     flex: 3;
     text-align: start;
     padding: 8px;
+    text-align: justify;
+    line-height: 1.5;
 }
 /*  */
 /*  */

@@ -11,7 +11,6 @@ function Header() {
       <div className="aboutUs__nav">
         <h4 className="aboutUs__nav-name">DANH MỤC TRANG</h4>
         <div className="aboutUs__nav-main">
-          <button >Tìm kiếm</button>
           <button onClick={() => setActive("infor")}>TechieShop&reg; /SỰ KHỞI ĐẦU/</button>
           <button onClick={() => setActive("policy")}>Chính sách bảo hành</button>
           <button onClick={() => setActive("paymethod")}>Phương thức thanh toán</button>

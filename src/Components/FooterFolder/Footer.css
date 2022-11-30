@@ -6,7 +6,7 @@
     padding: 0;
 }
 .name {
-    padding: 24px 0;
+    padding: 18px 0;
     font-weight: 500;
 }
 /* .infor {
@@ -18,7 +18,8 @@
     grid-template-columns: repeat(4, 1fr);
     column-gap: 32px;
     padding: 12px 36px;
-    text-align: start;
+    text-align:justify;
+    line-height: 1.4;
 }
 .footer_infor a {
     display: flex;
@@ -37,6 +38,9 @@
 .footer__infor-contact {
 
 }*/
+.logo-footer{
+    margin-left: 24px;
+}
 .footer__infor-logo img{
     width: 50px;
 } 

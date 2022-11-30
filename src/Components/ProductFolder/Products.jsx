@@ -13,7 +13,7 @@ import ProductsMouse from "./ProductsMouse";
 import ProductsSpeaker from "./ProductsSpeaker";
 import ProductsCharger from "./ProductsCharger";
 import ProductsChargerBackup from "./ProductsChargerBackup";
-
+import Slideshow from "../Slideshow/Slideshow";
 
 
 function Products() {
@@ -21,7 +21,7 @@ function Products() {
     return (
         <div>
             <div className="mainPage_banner">
-                <img className="mainPage_banner-img" src={banner1} alt="banner"/>
+                <Slideshow/>
             </div>
 
             <div className="container__products">

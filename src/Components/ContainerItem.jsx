@@ -2,6 +2,7 @@ import React from "react";
 import { Component } from "react";
 import { useState } from "react";
 import './ContainerItem.css'
+import whiteplus from "./Images/whiteplus.jpg"
 
 
 function ContainerItem(img, name, price) {
@@ -19,7 +20,10 @@ function ContainerItem(img, name, price) {
             
             <div className="containerItem_infor">
                 <p className="containerItem_infor-price">{priceVND}</p>
-                <button className="buy-btn">Mua ngay</button>
+                <div className="add-buy-btn">
+                    <button className="buy-btn">Mua ngay</button>
+                    <button className="addcart"> <img src={whiteplus} alt="" /> </button>
+                </div>
             </div>
         </div>
     )

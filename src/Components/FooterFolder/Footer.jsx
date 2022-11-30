@@ -17,9 +17,8 @@ function Header() {
 
             <div className="footer__infor-link">
                 <div className="footer__infor-introduce-name name">Liên kết</div>
-                    <div className="footer__infor-introduce-infor infor">Tìm kiếm<br/>
-                        TechieShop&reg; /SỰ KHỞI ĐẦU/
-                        CHÍNH SÁCH BẢO HÀNH<br/>
+                    <div className="footer__infor-introduce-infor infor">
+                        TechieShop&reg; /SỰ KHỞI ĐẦU/CHÍNH SÁCH BẢO HÀNH<br/>
                         Phương thức thanh toán<br/>
                         <a href="https://tinhte.vn/">Tinhte.vn</a>
                         <a href="https://kenh14.vn/">Kenh14.vn</a>
@@ -33,10 +32,12 @@ function Header() {
             </div>
 
             <div className="footer__infor-logo">
-                <a href="#">
-                    <img src={logo} />
-                    <h2>TechieShop</h2>
-                </a>
+                    <div className="logo-footer">
+                        <a href="#">
+                            <img src={logo} alt="logo" />
+                            <h2>AloneSharks</h2>
+                        </a>
+                    </div>
                 <div className="name">Đăng ký nhận tin</div>
                 <form action="">
                     <input type="Email" placeholder="Nhập Email của bạn"/>
