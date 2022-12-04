@@ -33,6 +33,9 @@ Thêm trang Chi tiết sản phẩm
 Bộ lọc trang chi tiết sản phẩm.
 
 
-Hậu: spacing giữa product và slideshow, banner và Footer,Trang giới thiệu sp -> danh mục trang -> link open in new windows
+Hậu: (
+spacing giữa product và slideshow, banner và Footer
+Trang giới thiệu sp -> danh mục trang -> link open in new windows: xong
+)
 
 }
