@@ -12,13 +12,13 @@ function MainPage() {
             .then(res => setlist(res.data))                 
     },[]);
     return (
-        <div>
+        <div className="mainPage">
             <Slideshow/>
             <div className="newProducts">
                 <h3 className="newProducts_name name">Sản phẩm mới</h3>
                 <div className="newProducts_product product">
-                {list.map((item,index)=> item.loai==="keyboard"
-            &&(ContainerItem(item.hinh, item.name, item.price)))}
+                    {list.map((item,index)=> item.loai==="keyboard"
+                    &&(ContainerItem(item.hinh, item.name, item.price)))}
                 </div>
             </div>
             <div className="newProducts_product"></div>

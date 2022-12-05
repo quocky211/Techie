@@ -34,7 +34,7 @@ Bộ lọc trang chi tiết sản phẩm.
 
 
 Hậu: (
-spacing giữa product và slideshow, banner và Footer
+spacing giữa product và slideshow, banner và Footer: xong
 Trang giới thiệu sp -> danh mục trang -> link open in new windows: xong
 )
 
