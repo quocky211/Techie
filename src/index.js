@@ -11,7 +11,7 @@ import Login from "./Components/LoginFolder/Login";
 import Register from "./Components/Register/Register";
 import ShipAddress from "./Components/ShipAddress/ShipAddress";
 import ErrorPage from "./Components/Error/error-page";
-
+import Payment from "./Components/Payment/Payment"
 const router = createBrowserRouter([
   {
     path: "/",
@@ -49,6 +49,10 @@ const router = createBrowserRouter([
       {
         path: "ShipAddress",
         element: <ShipAddress />,
+      },
+      {
+        path:"Payment",
+        element:<Payment/>,
       },
     ],
   },

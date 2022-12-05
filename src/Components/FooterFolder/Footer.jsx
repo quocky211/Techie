@@ -38,7 +38,7 @@ function Header() {
                     <div className="logo-footer">
                         <a href="#">
                             <img src={logo} alt="logo" />
-                            <h2>AloneSharks</h2>
+                            <h2>TechieShop</h2>
                         </a>
                     </div>
                 <div className="name">Đăng ký nhận tin</div>
