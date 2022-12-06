@@ -30,7 +30,7 @@
     color: black;
 }
 .footer_infor a:hover{
-    color: black;
+    /* color: black; */
     text-decoration: none;
 }
 /* .footer__infor-introduce-name  {

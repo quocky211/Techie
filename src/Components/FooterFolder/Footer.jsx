@@ -1,6 +1,7 @@
 import React from "react";
 import "./Footer.css";
 import logo from "../Images/logo.webp";
+import {NavLink as Link} from "react-router-dom";
 
 
 function Header() {
@@ -18,7 +19,8 @@ function Header() {
             <div className="footer__infor-link">
                 <div className="footer__infor-introduce-name name">Liên kết</div>
                     <div className="footer__infor-introduce-infor infor">
-                        TechieShop&reg; /SỰ KHỞI ĐẦU/CHÍNH SÁCH BẢO HÀNH<br/>
+                        TechieShop&reg; /SỰ KHỞI ĐẦU/<br/>
+                        Chính sách bảo hành<br/>
                         Phương thức thanh toán<br/>
                         <a href="https://tinhte.vn/" target="_blank" rel="noreferrer">Tinhte.vn</a>
                         <a href="https://kenh14.vn/" target="_blank" rel="noreferrer">Kenh14.vn</a>
@@ -36,10 +38,10 @@ function Header() {
 
             <div className="footer__infor-logo">
                     <div className="logo-footer">
-                        <a href="#">
+                        <Link to="/">
                             <img src={logo} alt="logo" />
                             <h2>TechieShop</h2>
-                        </a>
+                        </Link>
                     </div>
                 <div className="name">Đăng ký nhận tin</div>
                 <form action="">

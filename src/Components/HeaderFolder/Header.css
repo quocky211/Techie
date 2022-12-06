@@ -48,11 +48,11 @@ button {
     padding-right: 12px;
 
 }
-.header-right_search {
+/* .header-right_search {
     position: relative;
     display: flex;
     align-items: center;
-    /* padding: 0 8px; */
+    padding: 0 8px;
 }
 .header-right_search form {
     display: flex;
@@ -75,7 +75,7 @@ button {
     height: 35px;
     border-bottom-right-radius: 25px;
     border-top-right-radius: 25px;
-}
+} */
 .header-right_item {
     display: flex;
     align-items: center;

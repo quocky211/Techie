@@ -14,34 +14,28 @@ function Header(props) {
     return (
             <div className="header">
                 <div className="header-left">
-                    <a href="#">
-                        <img src={logo} />
+                    <Link to="/">
+                        <img src={logo} alt="logo" />
                         <h2>TechieShop</h2>
-                    </a>
+                    </Link>
                 </div>
 
 
-      <div className="header-nav_menu">
-        <button>
-          <NavLink to="/MainPage">Trang chủ</NavLink>
-        </button>
-        <button>
-          <NavLink to="/Products">Sản phẩm</NavLink>
-        </button>
-        <button>
-          <NavLink to="/AboutUs">Giới thiệu</NavLink>
-        </button>
-      </div>
-      <Searchbar />
+        <div className="header-nav_menu">
+            <button>
+                <NavLink to="/MainPage">Trang chủ</NavLink>
+            </button>
+            <button>
+                <NavLink to="/Products">Sản phẩm</NavLink>
+            </button>
+            <button>
+                <NavLink to="/AboutUs">Giới thiệu</NavLink>
+            </button>
+        </div>
+        
+        <Searchbar />
 
                 <div className="header-right">
-                    {/* <div className="header-right_search">
-                        <form action="">
-                            <input type="text" placeholder="Nhập tên sản phẩm cần tìm" />
-                            <button><img /></button>
-                        </form>
-                    </div> */}
-
                     <div className="header-right_item">
                         <Link to="/Shoppingcart"><img src={shoppingIcon} alt="cart"/>{props.numberCart}</Link>
                         <button className="logIn-btn"><NavLink to="/Login">Đăng nhập</NavLink></button>
@@ -57,4 +51,3 @@ const mapStateToProps = state =>{
     }
 }
 export default connect(mapStateToProps,null)(Header)
-
