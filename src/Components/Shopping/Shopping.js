@@ -1,10 +1,18 @@
 import "./Shopping.css"
+import React from "react";
 import ShipAddress from "../ShipAddress/ShipAddress";
 import { NavLink as Link, NavLink} from "react-router-dom";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { connect } from "react-redux";
 import {IncreaseQuantity,DecreaseQuantity,DeleteCart} from '../../actions';
-
+import Snackbar from '@mui/material/Snackbar';
+import MuiAlert, { AlertProps } from '@mui/material/Alert';
+const Alert = React.forwardRef(function Alert(
+    props,
+    ref,
+  ) {
+    return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+  });
 
 function Shopping({items, IncreaseQuantity, DecreaseQuantity, DeleteCart})
 {
@@ -18,6 +26,19 @@ function Shopping({items, IncreaseQuantity, DecreaseQuantity, DeleteCart})
     function TotalPrice(price,tonggia){
         return Number(price * tonggia).toLocaleString('vi-VN');
     }
+    const [open, setOpen] = React.useState(false);
+
+  const handleClick = () => {
+    setOpen(true);
+  };
+
+  const handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setOpen(false);
+  };
     return (
 
         <div className="main">
@@ -43,7 +64,8 @@ function Shopping({items, IncreaseQuantity, DecreaseQuantity, DeleteCart})
                                     ListCart.map((item,key)=>{
                                         return(
                                             <tr key={key}>    
-                                            <td><i className="badge badge-danger" onClick={()=>DeleteCart(key)}>X</i></td>
+                                            <td><i className="badge badge-danger" onClick={()=>{DeleteCart(key);handleClick()}}>X</i></td>
+                                            
                                             <td>{item.name}</td>
                                             <td><img src={item.image} style={{width:'100px',height:'80px'}}/></td>
                                             <td>{Number(item.price).toLocaleString('vi-VN')} VNĐ</td>
@@ -66,6 +88,11 @@ function Shopping({items, IncreaseQuantity, DecreaseQuantity, DeleteCart})
                            </table>
                     </div>
                 </div>
+                <Snackbar open={open} autoHideDuration={1500} onClose={handleClose}>
+                                                <Alert onClose={handleClose} severity="error" sx={{ width: '100%' }}>
+                                                Đã bỏ sản phẩm ra khỏi giỏ hàng!
+                                                </Alert>
+                                            </Snackbar>
                 </div>
                 <div className="cal-money" style={{margin:'0 0 0 100px'}}>
                     <div className="discount">
