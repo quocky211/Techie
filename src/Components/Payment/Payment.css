@@ -1,0 +1,47 @@
+.main-container-payment {
+    font-size: 18px;
+}
+.nav ul{
+    display: flex;
+    list-style-type: none;
+}
+.nav ul li{
+    margin:0 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.nav ul li:nth-child(3){
+    color: darkblue;
+}
+.nav ul li:hover{
+    color: darkblue;
+}
+.form-payment-container {
+    width: 50%;
+    margin: auto;
+}
+.form-payment {
+    background-color: #d9d9d9;
+    padding: 12px;
+    margin: 16px 0;
+    border-radius: 10px;
+    text-align: start;
+}
+.form-payment_bank {
+    background-color: #d9d9d9;
+    border-radius: 10px;
+    padding: 12px;
+    text-align: center;
+}
+.btn-Submit{
+    font-size: 18px;
+    background-color: #6851A8;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 25px 0;
+    color: white;
+}
+.btn-Submit:hover{
+    background-color: #9f8cd4;
+    cursor: pointer;
+}
