@@ -4,6 +4,7 @@ import { useState } from "react";
 import './ContainerItem.css'
 import {AddCart} from '../actions'
 import {connect} from 'react-redux';
+import whiteplus from "./Images/whiteplus.jpg"
 
 
 export class ContainerItem extends Component {
@@ -33,7 +34,10 @@ export class ContainerItem extends Component {
                 
                 <div className="containerItem_infor">
                     <p className="containerItem_infor-price">{priceVND}</p>
+                    <div className="add-buy-btn">
                     <button className="buy-btn" onClick={()=>this.props.AddCart(item)}>Mua ngay</button>
+                    <button className="btn-addcart" onClick={()=>this.props.AddCart(item)}> <img src={whiteplus} alt="" /> </button>
+                    </div>
                 </div>
             </div>
     )}

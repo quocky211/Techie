@@ -41,7 +41,7 @@
 
 .containerItem {
     display: inline-block;
-    width: 240px;
+    width: 260px;
     margin: 8px;
     border: solid 1px #ccc;
     padding: 8px;
@@ -61,6 +61,7 @@
     font-size: 18px;
     text-align: justify;
     height: 40px;
+
 }
 /* .containeItem_infor {
 
@@ -83,15 +84,16 @@
     border-radius: 8px;
     padding: 8px;
 }
-.containerItem_infor .addcart {
+.containerItem_infor .btn-addcart {
     padding: 8px;
     background-color: #6851A8;
     border: #0b3296 2px solid ;
     border-radius: 8px;
 }
-.add-buy-btn .addcart img{
+.containerItem_infor img{
     width: 18px;
     height: 18px;
+    margin-left: 8px;
 }
 .containerItem_infor-price {
     color: #2f3542;

@@ -35,12 +35,12 @@ function Header(props) {
       <Searchbar />
 
                 <div className="header-right">
-                    <div className="header-right_search">
+                    {/* <div className="header-right_search">
                         <form action="">
                             <input type="text" placeholder="Nhập tên sản phẩm cần tìm" />
                             <button><img /></button>
                         </form>
-                    </div>
+                    </div> */}
 
                     <div className="header-right_item">
                         <Link to="/Shoppingcart"><img src={shoppingIcon} alt="cart"/>{props.numberCart}</Link>

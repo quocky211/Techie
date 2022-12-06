@@ -10,8 +10,10 @@
     width: 80%;
     margin: auto;
 }
-.name {
+.title-name {
     font-size: 24px;
     padding: 24px;
     margin-bottom: 0;
+    text-transform: uppercase;
+    font-weight: 500;
 }

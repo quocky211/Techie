@@ -18,6 +18,9 @@ button {
     color: darkblue;
     padding-left: 24px;
 }
+.header-left a:hover{
+    text-decoration: none;
+}
 .header-left img {
     width: 50px;
 }
@@ -33,6 +36,7 @@ button {
 
 .header-nav_menu button a{
     color: black;
+    text-decoration: none;
 }
 .header-nav_menu button:hover {
     border-bottom: solid 2px #ccc;
@@ -83,7 +87,7 @@ button {
 
 }
 .header-right_item .logIn-btn {
-    background-color: rgb(0, 100, 255);
+    background-color: #5A82E7;
     padding: 8px 12px;
     border-radius: 25px;
     line-height: 16px;
@@ -91,7 +95,7 @@ button {
 }
 .header-right_item .logIn-btn a{
     color: #fff;
-
+    text-decoration: none;
 }
 .stylebtn {
     border-bottom: solid 2px black;

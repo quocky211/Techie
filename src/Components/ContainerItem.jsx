@@ -2,6 +2,8 @@ import React from "react";
 import { Component } from "react";
 import { useState } from "react";
 import './ContainerItem.css'
+import {AddCart} from '../actions'
+import {connect} from 'react-redux';
 import whiteplus from "./Images/whiteplus.jpg"
 
 
