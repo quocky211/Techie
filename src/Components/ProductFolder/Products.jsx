@@ -1,19 +1,12 @@
-import { Component } from "react";
 import React, { useState } from "react";
-import data from '../data'
 import "./Products.css";
-import banner1 from "../Images/banner/banner_1.jpg";
-import banner2 from "../Images/banner/banner2.webp";
-import banner3 from "../Images/banner/banner3.webp";
-import banner4 from "../Images/banner/banner4.jpg";
-import ContainerItem from "../ContainerItem";
 import ProductsHeadphone from "./ProductsHeadphone";
 import ProductsKeyboard from "./ProductsKeyboard";
 import ProductsMouse from "./ProductsMouse";
 import ProductsSpeaker from "./ProductsSpeaker";
 import ProductsCharger from "./ProductsCharger";
 import ProductsChargerBackup from "./ProductsChargerBackup";
-
+import Slideshow from "../Slideshow/Slideshow";
 
 
 function Products() {
@@ -21,7 +14,7 @@ function Products() {
     return (
         <div>
             <div className="mainPage_banner">
-                <img className="mainPage_banner-img" src={banner1} alt="banner"/>
+                <Slideshow/>
             </div>
 
             <div className="container__products">

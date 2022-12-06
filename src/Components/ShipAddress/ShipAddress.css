@@ -1,5 +1,6 @@
 .main-container-ship{
     font-size: 18px;
+    /* height:min-content; */
 }
 .nav ul{
     display: flex;
@@ -15,4 +16,55 @@
 }
 .nav ul li:hover{
     color: darkblue;
+}
+/* Main */
+.form-address-container{
+    width: 60%;
+    margin: auto;
+}
+.form-address input{
+    padding: 10px;
+    font-size: 18px;
+    margin: 10px 0;
+    border-radius: 10px;
+}
+.form-address > input{
+    width: calc( 100% - 24px);
+}
+.mail-phone {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+.detail-address{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap:50px;
+}
+.detail-address select{
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px 0;
+    font-size: 18px;
+    border: 2px solid black;
+}
+.btn-Submit{
+    font-size: 18px;
+    background-color: #6851A8;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 25px 0;
+    color: white;
+}
+.btn-Submit:hover{
+    background-color: #9f8cd4;
+    cursor: pointer;
+}
+textarea{
+    width: calc(100% - 6px);
+    font-size: 18px;
+    margin: 10px 0;
+    border: 2px solid black;
+    border-radius: 10px;
 }

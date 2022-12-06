@@ -12,13 +12,18 @@ function MainPage() {
             .then(res => setlist(res.data))                 
     },[]);
     return (
-        <div>
+        <div className="mainPage">
             <Slideshow/>
             <div className="newProducts">
                 <h3 className="newProducts_name name">Sản phẩm mới</h3>
                 <div className="newProducts_product product">
+<<<<<<< HEAD
                 {list.map((item,index)=> item.loai==="keyboard"
             &&<ContainerItem price={item.price} name={item.name} img={item.hinh} maSp={item.maSp}/>)}
+=======
+                    {list.map((item,index)=> item.loai==="keyboard"
+                    &&(ContainerItem(item.hinh, item.name, item.price)))}
+>>>>>>> 22768b23bf8af372d808a7e5d4d3eb300a9be981
                 </div>
             </div>
             <div className="newProducts_product"></div>
@@ -27,7 +32,11 @@ function MainPage() {
                 <h3 className="bestSeller_name name">Bán chạy</h3>
                 <div className="bestSeller_product product">
                     {list.map((item,index)=> item.loai==="loa"
+<<<<<<< HEAD
                     &&<ContainerItem price={item.price} name={item.name} img={item.hinh} maSp={item.maSp}/>)} 
+=======
+                    &&(ContainerItem(item.hinh, item.name, item.price)))} 
+>>>>>>> 22768b23bf8af372d808a7e5d4d3eb300a9be981
                 </div>
             </div>
 

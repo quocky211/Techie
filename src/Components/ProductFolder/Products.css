@@ -21,18 +21,20 @@
     display: block;
     padding: 16px 0 0;
     font-weight: bold;
+    font-size: 20px;
 }
 .container__products-nav button:hover {
     border-bottom: solid 1px #ccc;
 }
 .container__products-products {
     flex: 6;
-
+    padding: 16px;
+    text-align: justify;
 }
 .container__products .containerItem {
     display: inline-block;
     width: 200px;
-    margin: 0 8px 8px;
+    margin: 8px;
     border: solid 1px #ccc;
     padding: 8px;
 }
