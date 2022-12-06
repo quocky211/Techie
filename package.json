@@ -12,11 +12,8 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.21.4",
     "babel-plugin-macros": "^3.1.0",
-<<<<<<< HEAD
     "bootstrap": "^4.2.1",
-=======
     "jquery": "^3.6.1",
->>>>>>> 22768b23bf8af372d808a7e5d4d3eb300a9be981
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.5",

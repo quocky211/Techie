@@ -4,7 +4,8 @@ import "./Header.css";
 import logo from "../Images/logo.webp";
 import shoppingIcon from "../Images/shopping-icon.png";
 import { NavLink as Link, NavLink } from "react-router-dom";
-<<<<<<< HEAD
+import Searchbar from "../Search/Searchbar";
+
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from "../LoginFolder/Login";
 import  {connect} from  'react-redux'
@@ -18,19 +19,7 @@ function Header(props) {
                         <h2>TechieShop</h2>
                     </a>
                 </div>
-=======
-import Searchbar from "../Search/Searchbar";
 
-function Header() {
-  return (
-    <div className="header">
-      <div className="header-left">
-        <a href="/">
-          <img src={logo} alt="logo" />
-          <h2>TechieShop</h2>
-        </a>
-      </div>
->>>>>>> 22768b23bf8af372d808a7e5d4d3eb300a9be981
 
       <div className="header-nav_menu">
         <button>
@@ -43,13 +32,13 @@ function Header() {
           <NavLink to="/AboutUs">Giới thiệu</NavLink>
         </button>
       </div>
+      <Searchbar />
 
-<<<<<<< HEAD
                 <div className="header-right">
                     <div className="header-right_search">
                         <form action="">
                             <input type="text" placeholder="Nhập tên sản phẩm cần tìm" />
-                            <button><img src={searchIcon} /></button>
+                            <button><img /></button>
                         </form>
                     </div>
 
@@ -60,20 +49,7 @@ function Header() {
                 </div>
             </div>         
     );
-=======
-      <Searchbar />
->>>>>>> 22768b23bf8af372d808a7e5d4d3eb300a9be981
 
-      <div className="header-right_item">
-        <Link to="/Shoppingcart">
-          <img src={shoppingIcon} alt="cart" />
-        </Link>
-        <button className="logIn-btn">
-          <NavLink to="/Login">Đăng nhập</NavLink>
-        </button>
-      </div>
-    </div>
-  );
 }
 const mapStateToProps = state =>{
     return{

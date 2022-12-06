@@ -11,13 +11,13 @@ import Login from "./Components/LoginFolder/Login";
 import Register from "./Components/Register/Register";
 import ShipAddress from "./Components/ShipAddress/ShipAddress";
 import ErrorPage from "./Components/Error/error-page";
-<<<<<<< HEAD
+
 import {Provider} from 'react-redux';
 import stores  from './stores'
 import "bootstrap/dist/css/bootstrap.css";
-=======
+
 import Payment from "./Components/Payment/Payment"
->>>>>>> 22768b23bf8af372d808a7e5d4d3eb300a9be981
+
 const router = createBrowserRouter([
   {
     path: "/",
