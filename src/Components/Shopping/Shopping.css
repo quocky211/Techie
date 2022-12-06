@@ -5,6 +5,10 @@
     display: flex;
     text-align: justify;
 }
+.row{
+    text-align: center;
+}
+
 .products{
     flex: 3;
 }

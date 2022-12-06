@@ -11,7 +11,9 @@ import Login from "./Components/LoginFolder/Login";
 import Register from "./Components/Register/Register";
 import ShipAddress from "./Components/ShipAddress/ShipAddress";
 import ErrorPage from "./Components/Error/error-page";
-
+import {Provider} from 'react-redux';
+import stores  from './stores'
+import "bootstrap/dist/css/bootstrap.css";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -55,7 +57,12 @@ const router = createBrowserRouter([
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
+  <Provider store={stores}>
   <React.StrictMode>
-    <RouterProvider router={router} />
+    
+      <RouterProvider router={router} />
+    
+    
   </React.StrictMode>
+  </Provider>
 );

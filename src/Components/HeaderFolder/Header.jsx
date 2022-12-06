@@ -14,8 +14,9 @@ import ShipAddress from "../ShipAddress/ShipAddress";
 import { NavLink as Link, NavLink } from "react-router-dom";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from "../LoginFolder/Login";
+import  {connect} from  'react-redux'
 
-function Header() {
+function Header(props) {
     return (
             <div className="header">
                 <div className="header-left">
@@ -40,7 +41,7 @@ function Header() {
                     </div>
 
                     <div className="header-right_item">
-                        <Link to="/Shoppingcart"><img src={shoppingIcon} alt="cart"/></Link>
+                        <Link to="/Shoppingcart"><img src={shoppingIcon} alt="cart"/>{props.numberCart}</Link>
                         <button className="logIn-btn"><NavLink to="/Login">Đăng nhập</NavLink></button>
                     </div>
                 </div>
@@ -48,5 +49,10 @@ function Header() {
     );
 
 }
+const mapStateToProps = state =>{
+    return{
+        numberCart:state._todoProduct.numberCart
+    }
+}
+export default connect(mapStateToProps,null)(Header)
 
-export default Header;

@@ -15,7 +15,7 @@ function ProductsHeadphone() {
     return (
         <div className="container__products-products">
             {list.map((item,index)=> index>-1&&index<10
-                &&(ContainerItem(item.hinh, item.name, item.price)))}    
+                &&<ContainerItem price={item.price} name={item.name} img={item.hinh} maSp={item.maSp}/>)}    
         </div>    
     );
 }

@@ -15,7 +15,7 @@ function ProductsChargerBackup() {
     return (
         <div className="container__products-products">
             {list.map((item,index)=> item.loai==="sacDp"
-                &&(ContainerItem(item.hinh, item.name, item.price)))}   
+                &&<ContainerItem price={item.price} name={item.name} img={item.hinh} maSp={item.maSp}/>)}   
         </div>
     );
 }

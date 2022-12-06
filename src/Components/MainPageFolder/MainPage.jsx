@@ -18,7 +18,7 @@ function MainPage() {
                 <h3 className="newProducts_name name">Sản phẩm mới</h3>
                 <div className="newProducts_product product">
                 {list.map((item,index)=> item.loai==="keyboard"
-            &&(ContainerItem(item.hinh, item.name, item.price)))}
+            &&<ContainerItem price={item.price} name={item.name} img={item.hinh} maSp={item.maSp}/>)}
                 </div>
             </div>
             <div className="newProducts_product"></div>
@@ -26,8 +26,8 @@ function MainPage() {
             <div className="bestSeller">
                 <h3 className="bestSeller_name name">Bán chạy</h3>
                 <div className="bestSeller_product product">
-                    {list.map((item,index)=> item.loai==="mouse"
-                    &&(ContainerItem(item.hinh, item.name, item.price)))} 
+                    {list.map((item,index)=> item.loai==="loa"
+                    &&<ContainerItem price={item.price} name={item.name} img={item.hinh} maSp={item.maSp}/>)} 
                 </div>
             </div>
 
@@ -35,7 +35,7 @@ function MainPage() {
                 <h3 className="onSale_name name">Giảm giá</h3>
                 <div className="onSale_product product">
                     {list.map((item,index)=> item.loai==="sacDp"
-                    &&(ContainerItem(item.hinh, item.name, item.price)))}  
+                    &&<ContainerItem price={item.price} name={item.name} img={item.hinh} maSp={item.maSp}/>)}  
                 </div>
             </div>
         </div>
