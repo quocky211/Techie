@@ -33,7 +33,11 @@
     padding: 12px;
     text-align: center;
 }
-.btn-Submit{
+.form-payment_bank p {
+    line-height: 24px;
+    margin: 0;
+}
+/* .btn-Submit{
     font-size: 18px;
     background-color: #6851A8;
     padding: 15px;
@@ -44,4 +48,4 @@
 .btn-Submit:hover{
     background-color: #9f8cd4;
     cursor: pointer;
-}
+} */
