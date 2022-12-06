@@ -17,3 +17,7 @@
     text-transform: uppercase;
     font-weight: 500;
 }
+.slick-prev:before, .slick-next:before
+{
+    color: black !important;
+}

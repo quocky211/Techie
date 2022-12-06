@@ -10,7 +10,7 @@
 
 .container__products {
     display: flex;
-    width: 80%;
+    width: 90%;
     margin: auto;
 }
 .container__products-nav {
@@ -33,7 +33,7 @@
 }
 .container__products .containerItem {
     display: inline-block;
-    width: 200px;
+    width: 240px;
     margin: 8px;
     border: solid 1px #ccc;
     padding: 8px;

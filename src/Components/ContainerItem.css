@@ -45,6 +45,7 @@
     margin: 8px;
     border: solid 1px #ccc;
     padding: 8px;
+    border-radius: 10px;
 }
 .containerItem button {
     padding: 0;
@@ -85,6 +86,7 @@
     padding: 8px;
 }
 .containerItem_infor .btn-addcart {
+    height: 47px;
     padding: 8px;
     background-color: #6851A8;
     border: #0b3296 2px solid ;
@@ -93,7 +95,7 @@
 .containerItem_infor img{
     width: 18px;
     height: 18px;
-    margin-left: 8px;
+    margin: auto;
 }
 .containerItem_infor-price {
     color: #2f3542;

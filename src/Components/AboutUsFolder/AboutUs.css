@@ -4,6 +4,7 @@
     display: flex;
     padding: 24px 8px;
     margin: 16px auto;
+    font-size: 18px;
 }
 .aboutUs__nav {
     flex: 1;

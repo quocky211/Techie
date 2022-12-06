@@ -29,6 +29,10 @@
     text-decoration: none;
     color: black;
 }
+.footer_infor a:hover{
+    color: black;
+    text-decoration: none;
+}
 /* .footer__infor-introduce-name  {
 
 }
