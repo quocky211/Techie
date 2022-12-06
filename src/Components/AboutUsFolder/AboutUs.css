@@ -30,6 +30,10 @@
     text-align: start;
     color: #000;
 }
+.aboutUs__nav-main a:hover{
+    text-decoration: none;
+    color: black;
+}
 .aboutUs__main {
     flex: 3;
     text-align: start;
