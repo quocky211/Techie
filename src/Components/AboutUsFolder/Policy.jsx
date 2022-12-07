@@ -15,7 +15,7 @@ function Header() {
             vậy). Hiểu được khó khăn đó của khách hàng, TechieShop&reg; sẽ viết
             ngắn trong 6 mục về chế độ{" "}
             <b>
-              bảo hành mang tên /SHARKSCARE/, lên tới 2 tháng cho tất cả sản
+              bảo hành mang tên /TECHIECARE/, lên tới 2 tháng cho tất cả sản
               phẩm và bảo hành 1 đổi 1 trong 7 ngày khi phát hiện lỗi từ nhà sản
               xuất.
             </b>
@@ -28,7 +28,7 @@ function Header() {
           </p>
           <p>
             - Nếu lỗi phát sinh từ phần cứng, tổng đài sẽ hướng dẫn quý khách
-            gửi sản phẩm về MèoBer&reg; kiểm tra và xác định. Nếu lỗi từ NSX, quý
+            gửi sản phẩm về TechieShop&reg; kiểm tra và xác định. Nếu lỗi từ NSX, quý
             khách sẽ được đổi sản phẩm tương ứng hoặc sản phẩm tốt hơn trong
             trường hợp mẫu cần đổi hết hàng, sản phẩm đổi sẽ mới 100%, nguyên
             seal.

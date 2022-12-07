@@ -21,7 +21,7 @@ function MainPage() {
         arrows:true,
         infinite: true,
         speed:1000,
-        slidesToShow:3,
+        slidesToShow:4,
         slidesToScroll:1,
     };
     return (

@@ -39,12 +39,7 @@
 } 
 .money p{
     font-size: 18px;
-}
-.money span{
-    font-size: 18px;
-    font-weight: bold;
-    color: red;
-    float: right;
+    margin: 15px 0;
 }
 .buy-btn{
     text-align: center!;
@@ -55,4 +50,7 @@
     padding: 10px;
     border: #0b3296 2px solid;
     border-radius: 10px;
+}
+.buy-btn:hover{
+    background-color: #5A82E7;
 }

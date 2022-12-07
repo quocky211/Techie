@@ -112,7 +112,6 @@ function Shopping({items, IncreaseQuantity, DecreaseQuantity, DeleteCart})
                         <hr />
                         <div className="sum-cost">
                             <p>Tổng: {Number(TotalCart+30000).toLocaleString('vi-VN')} VNĐ</p>
-
                         </div>
                     </div>
                     <NavLink to='/ShipAddress'><button className="buy-btn">Mua hàng</button></NavLink>

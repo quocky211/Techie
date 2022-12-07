@@ -26,7 +26,7 @@ function Register()
                 <p>TechieShop</p>
             </div>
 
-            <div className="regisForm">
+            <div className="regisForm-format">
                 <h3>Đăng ký</h3>
                 <form>
                     <input type="text" name="username" placeholder="Tên đăng nhập" 

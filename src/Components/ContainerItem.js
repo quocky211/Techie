@@ -46,6 +46,7 @@ export function ContainerItem(props) {
         return(
             <div className="containerItem">
                 <Snackbar open={open} autoHideDuration={1500} onClose={handleClose}>
+
                         <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
                         Thêm vào giỏ hàng thành công!
                         </Alert>
