@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import {GET_ALL_PRODUCT,GET_NUMBER_CART,ADD_CART, DECREASE_QUANTITY, INCREASE_QUANTITY, DELETE_CART} from  '../actions';
+import {GET_ALL_PRODUCT,GET_NUMBER_CART,ADD_CART, DECREASE_QUANTITY, INCREASE_QUANTITY, DELETE_CART, DELETE_STORAGE} from  '../actions';
  let item =[]
 if ((localStorage.getItem("gio"))!==null)
    item= JSON.parse(localStorage.getItem("gio"))
@@ -83,7 +83,9 @@ function todoProduct(state = initProduct, action){
                 state.numberCart-=quantity_;
                 return{
                     ...state,
-        }
+                  }
+             
+
         default:
             return state;
     }

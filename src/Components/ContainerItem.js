@@ -50,7 +50,7 @@ export function ContainerItem(props) {
                         <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
                         Thêm vào giỏ hàng thành công!
                         </Alert>
-                    </Snackbar>
+                </Snackbar>
                 <button>
                     <img src={props.img} alt="sanpham" className="ContainerItem_image"/>
                     <p className="containerItem_name">{props.name}</p>

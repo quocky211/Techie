@@ -88,7 +88,7 @@ function Shopping({items, IncreaseQuantity, DecreaseQuantity, DeleteCart})
                            </table>
                     </div>
                 </div>
-                <Snackbar open={open} autoHideDuration={1500} onClose={handleClose}>
+                                            <Snackbar open={open} autoHideDuration={1500} onClose={handleClose}>
                                                 <Alert onClose={handleClose} severity="error" sx={{ width: '100%' }}>
                                                 Đã bỏ sản phẩm ra khỏi giỏ hàng!
                                                 </Alert>
