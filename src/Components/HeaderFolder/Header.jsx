@@ -37,7 +37,10 @@ function Header(props) {
 
                 <div className="header-right">
                     <div className="header-right_item">
-                        <Link to="/Shoppingcart"><img src={shoppingIcon} alt="cart"/><span style={{borderRadius:'8px', margin:'-10px 0 10px -5px',backgroundColor:'black',color:'white',textDecorationLine:'none'}} >{props.numberCart}</span></Link>
+                        <Link to="/Shoppingcart">
+                            <img src={shoppingIcon} alt="cart"/>
+                            <span>{props.numberCart}</span>
+                        </Link>
                         <button className="logIn-btn"><NavLink to="/Login">Đăng nhập</NavLink></button>
                     </div>
                 </div>
