@@ -84,9 +84,19 @@ button {
 }
 .header-right_item span {
     position: relative;
-    top: -8px;
-    color: black;
+    top: -7px;
+    left: -10px;
+    color: white;
+    background-color:#6851a8;
+    border-radius: 100%;
     font-weight: 500;
+    height: 20px;
+    border: solid black 1.5px;
+    font-size: 13px;
+    width: 20px;
+    line-height: 15px;
+    text-align: center;
+    display: inline-block;
     text-decoration: none;
 }
 .header-right_item .logIn-btn {

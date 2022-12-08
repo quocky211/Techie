@@ -17,19 +17,19 @@ function ProductDetails() {
   if (!product) {
     return null;
   }
-
+  var vnd = Intl.NumberFormat('vi-VN', {
+    style: 'currency',
+    currency: 'VND'
+});
   return (
-    <div>
+    <div >
       <div>
         {product.map((items)=>productID==items.maSp&&
         <div>
-          <div>ID = {productID}</div>
           <img src={items.hinh} alt="" />
           <ul>
             <li>{items.name}</li>
-            <li>{items.loai}</li>
-            <li>{items.price}</li>
-            <li>{items.maSp}</li>
+            <li>{vnd.format(items.price)}</li>
           </ul>
         </div>)}
       </div>
