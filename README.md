@@ -22,7 +22,6 @@ Thêm trang Chi tiết sản phẩm
 
 Bộ lọc trong trang chi tiết sản phẩm.
 
-Thêm dữ liệu vào database: tên, giá,...
 Call Api địa chỉ
 
 
