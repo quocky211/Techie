@@ -6,6 +6,9 @@ import { AddCart } from "../../actions";
 import { connect } from "react-redux";
 import MuiAlert, { AlertProps } from '@mui/material/Alert';
 import Snackbar from '@mui/material/Snackbar';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
 const axios = require("axios");
 
 const Alert = React.forwardRef(function Alert(
@@ -45,7 +48,14 @@ export function ProductDetails(props) {
   var vnd = Intl.NumberFormat('vi-VN', {
     style: 'currency',
     currency: 'VND'
-});
+  });
+  let settings = {
+    arrows:true,
+    infinite: true,
+    speed:1000,
+    slidesToShow:4,
+    slidesToScroll:1,
+  };
   return (
     <div className="product-detail-container">
       <Snackbar open={open} autoHideDuration={1500} onClose={handleClose}>
@@ -119,10 +129,10 @@ export function ProductDetails(props) {
       </div>
       <h3 class="section-title">Các sản phẩm liên quan</h3>
       <div className="related-products">
-        <div>
-          {product.map((item)=>productID!=item.maSp&&product[productID-1].loai==item.loai&&
+        <Slider {...settings}>
+          {product.map((item)=>productID!==item.maSp&&product[productID-1].loai===item.loai&&
           <ContainerItem price={item.price} name={item.name} img={item.hinh} maSp={item.maSp}/>)}
-        </div>
+        </Slider>
       </div>
     </div>
   );

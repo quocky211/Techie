@@ -70,3 +70,7 @@
     display: block;
     margin: 10px auto;
 }
+.slick-prev:before, .slick-next:before
+{
+    color: black !important;
+}
