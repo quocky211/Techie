@@ -5,6 +5,7 @@ export const GET_NUMBER_CART = 'GET_NUMBER_CART';
 export const ADD_CART = 'ADD_CART' ;
 export const UPDATE_CART = 'UPDATE_CART';
 export const DELETE_CART = 'DELETE_CART';
+export const OFF_NOTI = 'OFF_NOTI';
 
 
 /*GET NUMBER CART*/
@@ -13,7 +14,11 @@ export function GetNumberCart(){
         type:'GET_NUMBER_CART'
     }
 }
-
+export function Off_Noti(){
+    return{
+        type:'OFF_NOTI'
+    }
+}
 export function AddCart(payload){
     return {
         type:'ADD_CART',

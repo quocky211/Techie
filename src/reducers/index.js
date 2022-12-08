@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import {GET_ALL_PRODUCT,GET_NUMBER_CART,ADD_CART, DECREASE_QUANTITY, INCREASE_QUANTITY, DELETE_CART, DELETE_STORAGE} from  '../actions';
+import {GET_NUMBER_CART,ADD_CART, DECREASE_QUANTITY, INCREASE_QUANTITY, DELETE_CART, OFF_NOTI} from  '../actions';
  let item =[]
 if ((localStorage.getItem("gio"))!==null)
    item= JSON.parse(localStorage.getItem("gio"))
@@ -11,6 +11,7 @@ for (let i=0;i<item.length;i++)
 const initProduct = {
     numberCart: num,
     Carts:item,
+    noti:false,
     _products:[]
 }
 
@@ -21,6 +22,9 @@ function todoProduct(state = initProduct, action){
                     ...state
                 }
         case ADD_CART:
+            
+            state.noti=true
+
             if(state.numberCart===0){
                 let cart = {
                     id:action.payload.maSp,
@@ -84,7 +88,11 @@ function todoProduct(state = initProduct, action){
                 return{
                     ...state,
                   }
-             
+            case OFF_NOTI:
+                state.noti=false
+                return {
+                    ...state
+                }
 
         default:
             return state;

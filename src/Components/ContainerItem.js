@@ -9,6 +9,7 @@ import whiteplus from "./Images/whiteplus.jpg"
 import { Link } from "react-router-dom";
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert, { AlertProps } from '@mui/material/Alert';
+
 const Alert = React.forwardRef(function Alert(
     props,
     ref,
@@ -32,24 +33,25 @@ export function ContainerItem(props) {
         const [open, setOpen] = React.useState(false);
 
   const handleClick = () => {
-    setOpen(true);
+    setTimeout(() => {
+      setOpen(true);
+    }, "150")
   };
 
   const handleClose = (event, reason) => {
     if (reason === 'clickaway') {
       return;
     }
-
-    setOpen(false);
+    setOpen(false)
+    ;
   };
 
         return(
             <div className="containerItem">
                 <Snackbar open={open} autoHideDuration={1500} onClose={handleClose}>
-
-                        <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
+                  <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
                         Thêm vào giỏ hàng thành công!
-                        </Alert>
+                  </Alert>
                 </Snackbar>
                 <button>
                     <img src={props.img} alt="sanpham" className="ContainerItem_image"/>
@@ -61,12 +63,16 @@ export function ContainerItem(props) {
                     <Link to="/Shoppingcart">
                         <button className="buy-btn" onClick={()=>props.AddCart(item)}>Mua ngay</button>
                     </Link>
-                    <button className="btn-addcart" onClick={()=>{props.AddCart(item); handleClick()}}> <img src={whiteplus} alt="" /> </button>
+                    <button className="btn-addcart" onClick={()=>{handleClose();handleClick();props.AddCart(item);}}> <img src={whiteplus} alt="" /> </button>
                     
                     </div>
                     
                 </div>
-                
+                <Snackbar open={open} autoHideDuration={1500} onClose={handleClose}>
+                  <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
+                        Thêm vào giỏ hàng thành công!
+                  </Alert>
+                </Snackbar>
             </div>
             
     )}
