@@ -60,8 +60,8 @@
     font-weight: 500;
     margin: 4px 0;
     font-size: 18px;
-    text-align: justify;
-    height: 40px;
+    text-align: center;
+    height: 50px;
 
 }
 /* .containeItem_infor {
@@ -83,6 +83,7 @@
     background-color: #6851A8;
     color: white;
     border-radius: 8px;
+    height: 47px;
     padding: 8px;
 }
 .containerItem_infor .btn-addcart {

@@ -18,7 +18,6 @@ const Alert = React.forwardRef(function Alert(
   });
   
 export function ContainerItem(props) {
-    
         var vnd = Intl.NumberFormat('vi-VN', {
             style: 'currency',
             currency: 'VND'
@@ -35,9 +34,8 @@ export function ContainerItem(props) {
   const handleClick = () => {
     setTimeout(() => {
       setOpen(true);
-    }, "150")
+    }, 100)
   };
-
   const handleClose = (event, reason) => {
     if (reason === 'clickaway') {
       return;
@@ -45,39 +43,30 @@ export function ContainerItem(props) {
     setOpen(false)
     ;
   };
-
-        return(
-            <div className="containerItem">
-                <Snackbar open={open} autoHideDuration={1500} onClose={handleClose}>
-                  <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
-                        Thêm vào giỏ hàng thành công!
-                  </Alert>
-                </Snackbar>
-                <Link to={link}>
-                  <button>
-                      <img src={props.img} alt="sanpham" className="ContainerItem_image"/>
-                      <p className="containerItem_name">{props.name}</p>
-                  </button>
-                </Link>
-                <div className="containerItem_infor">
-                    <p className="containerItem_infor-price">{priceVND}</p>
-                    <div className="add-buy-btn">
-                    <Link to="/ShoppingCart">
-                        <button className="buy-btn" onClick={()=>props.AddCart(item)}>Mua ngay</button>
-                    </Link>
-                    <button className="btn-addcart" onClick={()=>{handleClose();handleClick();props.AddCart(item);}}> <img src={whiteplus} alt="" /> </button>
-                    
-                    </div>
-                    
-                </div>
-                <Snackbar open={open} autoHideDuration={1500} onClose={handleClose}>
-                  <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
-                        Thêm vào giỏ hàng thành công!
-                  </Alert>
-                </Snackbar>
+    return(
+        <div className="containerItem">
+            <Snackbar open={open} autoHideDuration={1500} onClose={handleClose}>
+              <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
+                    Thêm vào giỏ hàng thành công!
+              </Alert>
+            </Snackbar>
+            <Link to={link}>
+              <button>
+                  <img src={props.img} alt="sanpham" className="ContainerItem_image"/>
+                  <p className="containerItem_name">{props.name}</p>
+              </button>
+            </Link>
+            <div className="containerItem_infor">
+                <p className="containerItem_infor-price">{priceVND}</p>
+                <div className="add-buy-btn">
+                  <Link to="/ShoppingCart">
+                      <button className="buy-btn" onClick={()=>props.AddCart(item)}>Mua ngay</button>
+                  </Link>
+                  <button className="btn-addcart" onClick={()=>{handleClose();handleClick();props.AddCart(item);}}> <img src={whiteplus} alt="" /></button>               
+                </div>         
             </div>
-            
-    )}
+        </div>)
+}
 
 const mapStateToProps = state =>{
     return {
