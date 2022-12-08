@@ -1,12 +1,11 @@
 import { Form, useParams } from "react-router-dom";
+import ContainerItem from "../ContainerItem";
 import React from "react";
 const axios = require("axios");
-
 function ProductDetails() {
   const [product, setProduct] = React.useState(null);
   const[item,setitem]=React.useState(null)
   const { productID } = useParams();
-
   React.useEffect(() => {
     axios
       .get("http://demoapiiii.somee.com/api/ServiceController/GetAllSP")
@@ -15,25 +14,33 @@ function ProductDetails() {
       });
     
   });
-
   if (!product) {
     return null;
   }
 
   return (
-    <div>{product.map((items)=>
-      productID==items.maSp&&
+    <div>
       <div>
-      <div>ID = {productID}</div>
-      <img src={items.hinh} alt="" />
-      <ul>
-        <li>{items.name}</li>
-        <li>{items.loai}</li>
-        <li>{items.price}</li>
-        <li>{items.maSp}</li>
-      </ul>
-    </div>
-    )}
+        {product.map((items)=>productID==items.maSp&&
+        <div>
+          <div>ID = {productID}</div>
+          <img src={items.hinh} alt="" />
+          <ul>
+            <li>{items.name}</li>
+            <li>{items.loai}</li>
+            <li>{items.price}</li>
+            <li>{items.maSp}</li>
+          </ul>
+        </div>)}
+      </div>
+
+      <div>
+        <p>Các sản phẩm liên quan</p>
+        <div>
+          {product.map((item)=>productID!=item.maSp&&product[productID-1].loai==item.loai&&
+          <ContainerItem price={item.price} name={item.name} img={item.hinh} maSp={item.maSp}/>)}
+        </div>
+      </div>
     </div>
     
   );
