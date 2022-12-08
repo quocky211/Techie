@@ -94,7 +94,7 @@ function Shopping({items, IncreaseQuantity, DecreaseQuantity, DeleteCart})
                                                 </Alert>
                                             </Snackbar>
                 </div>
-                <div className="cal-money" style={{margin:'0 -40px 0 40px'}}>
+                <div className="cal-money" style={{margin:'0 -40px 0 20px'}}>
                     <div className="discount">
                         <h2>Mã giảm giá</h2>
                         <div className="enter-voucher">
