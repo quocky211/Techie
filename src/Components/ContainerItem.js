@@ -31,7 +31,7 @@ export function ContainerItem(props) {
             hinh:props.img
         }
         const [open, setOpen] = React.useState(false);
-        const s="Products/"+props.maSp;
+        const s="/Products/"+props.maSp;
   const handleClick = () => {
     setTimeout(() => {
       setOpen(true);
