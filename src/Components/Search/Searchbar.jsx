@@ -1,4 +1,4 @@
-import { Component } from "react";
+import { useNavigate } from "react-router-dom";
 import Select, { components } from "react-select";
 import React, { useState } from "react";
 import "./Searchbar.css";
@@ -28,6 +28,7 @@ function ParseResponse(response) {
     var singleitem = {};
     singleitem["value"] = element.name.toLowerCase();
     singleitem["label"] = element.name;
+    singleitem["maSp"] = element.maSp;
     options.push(singleitem);
   });
 }
@@ -39,10 +40,15 @@ axios
   });
 
 function Searchbar() {
+  let navigate = useNavigate();
+  const handleChange = (event) => {
+    navigate("/Products/" + event.maSp);
+  };
   return (
     <div className="header-right">
       <div className="header-right_search">
         <Select
+          onChange={handleChange}
           styles={customStyles}
           placeholder={"Tìm kiếm sản phẩm"}
           options={options}
