@@ -12,7 +12,7 @@ function ProductsHeadphone() {
     
     return (
         <div className="container__products-products">
-            {list.map((item,index)=> index>-1&&index<10
+            {list.map((item,index)=> item.loai=="headphone"
                 &&<ContainerItem price={item.price} name={item.name} img={item.hinh} maSp={item.maSp}/>)}    
         </div>    
     );
