@@ -31,7 +31,7 @@ export function ContainerItem(props) {
             hinh:props.img
         }
         const [open, setOpen] = React.useState(false);
-        const s="/Products/"+props.maSp;
+        const link="/Products/"+props.maSp;
   const handleClick = () => {
     setTimeout(() => {
       setOpen(true);
@@ -53,7 +53,7 @@ export function ContainerItem(props) {
                         Thêm vào giỏ hàng thành công!
                   </Alert>
                 </Snackbar>
-                <Link to={s}>
+                <Link to={link}>
                   <button>
                       <img src={props.img} alt="sanpham" className="ContainerItem_image"/>
                       <p className="containerItem_name">{props.name}</p>
@@ -62,7 +62,7 @@ export function ContainerItem(props) {
                 <div className="containerItem_infor">
                     <p className="containerItem_infor-price">{priceVND}</p>
                     <div className="add-buy-btn">
-                    <Link to={s}>
+                    <Link to="/ShoppingCart">
                         <button className="buy-btn" onClick={()=>props.AddCart(item)}>Mua ngay</button>
                     </Link>
                     <button className="btn-addcart" onClick={()=>{handleClose();handleClick();props.AddCart(item);}}> <img src={whiteplus} alt="" /> </button>
