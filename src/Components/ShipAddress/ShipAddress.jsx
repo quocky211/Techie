@@ -64,12 +64,11 @@ $("#ward").on("change",function() {
 var printResult = () => {
     if ($("#district").val() !== "" && $("#province").val() !== "" &&
         $("#ward").val() !== "") {
-        let result = $("#province option:selected").text() +
-            " | " + $("#district option:selected").text() + " | " +
-            $("#ward option:selected").text();
-        $("#result").text(result)
-    }
-
+            let result = $("#province option:selected").text() +
+                " | " + $("#district option:selected").text() +
+                " | " + $("#ward option:selected").text();
+            $("#result").text(result)
+        }
 }
     return (
 
@@ -83,26 +82,26 @@ var printResult = () => {
             </div>
             <h2>Thông tin giao hàng</h2>
             <div className="form-address-container">
-                <form action="" method="post" className="form-address">
-                    <input type="text" placeholder="Họ và tên" />
+                <form action="/Payment" className="form-address">
+                    <input type="text" placeholder="Họ và tên" required/>
                     <div className="mail-phone">
-                        <input type="email" placeholder="Email" />
-                        <input type="text" placeholder="Số điện thoại" pattern="0-9"/>
+                        <input type="email" placeholder="Email"/>
+                        <input type="text" placeholder="Số điện thoại" pattern="[0]{1}[1-9]{1}[0-9]{8}" required/>
                     </div>
-                    <input type="text" placeholder="Địa chỉ" />
-                    {/* <div className="detail-address">
+                    <input type="text" placeholder="Địa chỉ" required/>
+                    <div className="detail-address">
                         <select name="" id="province">
-                            <option  value="">Chọn Tỉnh</option>
+                            <option  value="-1">Chọn Tỉnh</option>
                         </select>
                         <select name="" id="district">
-                            <option  value="">Chọn Quận</option>
+                            <option  value="-1">Chọn Quận</option>
                         </select>
                         <select name="" id="ward">
-                            <option  value="">Chọn Phường</option>
+                            <option  value="-1">Chọn Phường</option>
                         </select>
-                    </div> */}
+                    </div>
                     <textarea placeholder="Ghi chú" rows="4"></textarea>
-                    <Link to="/Payment"><button type="submit" name="submit" className="btn-Submit">Tiếp tục</button></Link>
+                    <button type="submit" name="submit" className="btn-Submit">Tiếp tục</button>
                 </form>
             </div>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
