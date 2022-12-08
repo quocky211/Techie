@@ -11,6 +11,7 @@ import Login from "./Components/LoginFolder/Login";
 import Register from "./Components/Register/Register";
 import ShipAddress from "./Components/ShipAddress/ShipAddress";
 import ErrorPage from "./Components/Error/error-page";
+import ProductDetails from "./Components/ProductDetails/ProductDetails";
 
 import {Provider} from 'react-redux';
 import stores  from './stores'
@@ -59,6 +60,13 @@ const router = createBrowserRouter([
       {
         path:"Payment",
         element:<Payment/>,
+      },
+      {
+        path: "Products/:productID",
+        element: <ProductDetails />,
+        loader: ({ params }) => {
+          return params.productID;
+        },
       },
     ],
   },

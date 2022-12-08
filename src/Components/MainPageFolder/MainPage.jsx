@@ -30,7 +30,7 @@ function MainPage({noti,Off_Noti}) {
     
     useEffect(() => {
             axios.get('http://demoapiiii.somee.com/api/ServiceController/GetAllSP')
-            .then(res => setlist(res.data))     
+            .then(res =>{ setlist(res.data); console.log(res.data)})     
         Off_Noti()
     },[]);
 

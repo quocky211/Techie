@@ -3,6 +3,7 @@ button {
     cursor: pointer;   
     background-color: transparent;
 }
+
 .header {
     display: flex;
     justify-content: space-between;
@@ -99,4 +100,7 @@ button {
 }
 .stylebtn {
     border-bottom: solid 2px black;
+}
+.hay {
+    
 }
