@@ -9,7 +9,6 @@ import Snackbar from '@mui/material/Snackbar';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import ProductInforTop from "./ProductInforTop";
 import RelatedProduct from "./RelatedProduct";
 const axios = require("axios");
 
@@ -130,7 +129,8 @@ export function ProductDetails(props) {
           </div>
             </div>  )
     }
-        </div>      
+        </div>
+      
         </div>
         )}
       </div>
