@@ -2,13 +2,15 @@ import { Form, Link, useParams } from "react-router-dom";
 import ContainerItem from "../ContainerItem";
 import "./ProductDetails.css" ;
 import React from "react";
-import { AddCart } from "../../actions";
+import {Off_Noti} from '../../actions';
 import { connect } from "react-redux";
 import MuiAlert, { AlertProps } from '@mui/material/Alert';
 import Snackbar from '@mui/material/Snackbar';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import ProductInforTop from "./ProductInforTop";
+
 const axios = require("axios");
 
 const Alert = React.forwardRef(function Alert(
@@ -17,22 +19,15 @@ const Alert = React.forwardRef(function Alert(
   ) {
     return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
   });
-export function ProductDetails(props) {
+export function ProductDetails({noti,Off_Noti}) {
   const [product, setProduct] = React.useState(null);
-  const [open, setOpen] = React.useState(false);
-  const handleClick = () => {
-    setTimeout(() => {
-      setOpen(true);
-    }, 100)
-  };
-
   const handleClose = (event, reason) => {
     if (reason === 'clickaway') {
       return;
     }
-    setOpen(false)
-    ;
+    Off_Noti()
   };
+  
   const { productID } = useParams();
   React.useEffect(() => {
     axios
@@ -58,7 +53,7 @@ export function ProductDetails(props) {
   };
   return (
     <div className="product-detail-container">
-      <Snackbar open={open} autoHideDuration={1500} onClose={handleClose}>
+      <Snackbar open={noti} autoHideDuration={1500} onClose={handleClose}>
         <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
               Thêm vào giỏ hàng thành công!
         </Alert>
@@ -66,20 +61,9 @@ export function ProductDetails(props) {
       <div className="product-detail">
         {product.map((items)=>productID==items.maSp&&  
         <div>
-          <div className="total-product" >
-            <img className="product-img" src={items.hinh} />
-            <div className="product-info">
-                <h3 className="product-name">{items.name}</h3>
-                <div className="line"/>
-                <p>Giá bán: {vnd.format(items.price)}</p>  
-                <p>Sản phẩm: <span className="btn btn-success">Còn hàng</span></p> 
-                    <h2 className="decrease-price">{vnd.format(items.price-100000)}</h2>
-                <div className="btn-footer">
-                  <Link className="buy-btn" to="/ShoppingCart"><button onClick={()=>props.AddCart(items)} style={{color:'white'}}>Mua ngay</button></Link>
-                  <span className="btn btn-success add-cart" onClick={()=>{props.AddCart(items);handleClose();handleClick()}}>Thêm vào giỏ hàng</span>
-                </div>    
-            </div>     
-          </div>
+          <ProductInforTop/>
+            
+          
           <h3 class="section-title">Mô tả sản phẩm</h3>
           <div className="detail" >
               <h5><span style={{color:'blue'}}>Bàn Phím Cơ Gaming Corsair K68 RGB</span> - gõ cực êm với switch Cherry MX, trang bị LED RGB bảy sắc cầu vồng, 
@@ -130,7 +114,7 @@ export function ProductDetails(props) {
       <h3 class="section-title">Các sản phẩm liên quan</h3>
       <div className="related-products">
         <Slider {...settings}>
-          {product.map((item)=>productID!==item.maSp&&product[productID-1].loai===item.loai&&
+          {product.map((item)=>productID!=item.maSp&&product[productID-1].loai===item.loai&&
           <ContainerItem price={item.price} name={item.name} img={item.hinh} maSp={item.maSp}/>)}
         </Slider>
       </div>
@@ -138,14 +122,10 @@ export function ProductDetails(props) {
   );
 }
 const mapStateToProps = state =>{
-  return {
-       _products: state._todoProduct,
-     };
-}
-function mapDispatchToProps(dispatch){
-  return{      
-      AddCart:item=>dispatch(AddCart(item))  
+  return{
+      noti:state._todoProduct.noti
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProductDetails)
+
+export default connect(mapStateToProps, {Off_Noti})(ProductDetails)
