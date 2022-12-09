@@ -43,7 +43,7 @@ function Login(props) {
           />
           <input type="text" name="" id="" placeholder="Mật khẩu" />
           <Link to="/MainPage">
-            <button onClick={handleClick}>Đăng nhập</button>
+            <button onClick={() => handleClick()}>Đăng nhập</button>
           </Link>
         </form>
         <br></br>
