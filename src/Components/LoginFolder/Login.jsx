@@ -3,8 +3,10 @@ import FbIcon from "../Images/facebook.ico";
 import GgIcon from "../Images/google.ico";
 import logo from "../Images/logo.webp";
 import { Link } from "react-router-dom";
+import { Log_in } from "../../actions";
+import { connect } from "react-redux";
 
-function Login() {
+function Login(props) {
   const fbLogin = () => {
     window.open(
       "https://www.facebook.com/login/",
@@ -18,6 +20,10 @@ function Login() {
       "_blank",
       "toolbar=0,location=0,menubar=0"
     );
+  };
+  const handleClick = () => {
+    props.Log_in();
+    console.log(props.isLoggedin);
   };
   return (
     <div className="loginmain">
@@ -37,7 +43,7 @@ function Login() {
           />
           <input type="text" name="" id="" placeholder="Mật khẩu" />
           <Link to="/MainPage">
-            <button>Đăng nhập</button>
+            <button onClick={handleClick}>Đăng nhập</button>
           </Link>
         </form>
         <br></br>
@@ -60,4 +66,16 @@ function Login() {
   );
 }
 
-export default Login;
+const mapStateToProps = (state) => {
+  return {
+    isLoggedin: state._todoProduct.isLoggedin,
+  };
+};
+
+function mapDispatchToProps(dispatch) {
+  return {
+    Log_in: () => dispatch(Log_in()),
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login);
