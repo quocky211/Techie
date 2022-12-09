@@ -51,17 +51,19 @@ export function ProductDetails({noti,Off_Noti}) {
     slidesToScroll:1,
   };
   return (
-    <div><Snackbar open={noti} autoHideDuration={1500} onClose={handleClose}>
-    <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
-          Thêm vào giỏ hàng thành công!
-    </Alert>
-  </Snackbar>
-      <div className="related-products">
-        <Slider {...settings}>
-          {product.map((item)=>productID!=item.maSp&&product[productID-1].loai===item.loai&&
-          <ContainerItem price={item.price} name={item.name} img={item.hinh} maSp={item.maSp}/>)}
-        </Slider>
-      </div>
+    <div>
+        <Snackbar open={noti} autoHideDuration={1500} onClose={handleClose}>
+            <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
+                Thêm vào giỏ hàng thành công!
+            </Alert>
+        </Snackbar>
+        <h3 class="section-title">Sản phẩm liên quan</h3>
+        <div className="related-products">
+            <Slider {...settings}>
+                {product.map((item)=>productID!=item.maSp&&product[productID-1].loai===item.loai&&
+                <ContainerItem price={item.price} name={item.name} img={item.hinh} maSp={item.maSp}/>)}
+            </Slider>
+        </div>
     </div>
   );
 }
