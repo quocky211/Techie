@@ -60,6 +60,7 @@
 }
 .related-products{
     background-color: white;
+    margin-top: 20px;
     padding: 30px;
     border-radius: 20px;
     justify-content: space-evenly;

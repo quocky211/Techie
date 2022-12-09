@@ -36,6 +36,9 @@ export function ContainerItem(props) {
       setOpen(true);
     }, 100)
   };
+  const refresh = () => {
+    window.location.refresh();
+  };
   const handleClose = (event, reason) => {
     if (reason === 'clickaway') {
       return;
@@ -51,7 +54,7 @@ export function ContainerItem(props) {
               </Alert>
             </Snackbar>
             <Link to={link}>
-              <button>
+              <button onClick={()=>refresh()}>
                   <img src={props.img} alt="sanpham" className="ContainerItem_image"/>
                   <p className="containerItem_name">{props.name}</p>
               </button>
