@@ -18,11 +18,8 @@ Deadline t3 tuần sau:
 
 Chuyển thanh tìm kiếm bên phải kế bên giỏ hàng.
 
-Thêm trang Chi tiết sản phẩm
-
 Bộ lọc trong trang chi tiết sản phẩm.
 
 Call Api địa chỉ
-
 
 }
