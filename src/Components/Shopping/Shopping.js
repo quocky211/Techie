@@ -37,7 +37,7 @@ function Shopping({ items, IncreaseQuantity, DecreaseQuantity, DeleteCart }) {
   };
   return (
     <div className="main">
-      <h1> Giỏ Hàng </h1>
+      <h1> GIỎ HÀNG </h1>
       <div className="main-container">
         <div className="products">
           <div className="row">
@@ -78,7 +78,8 @@ function Shopping({ items, IncreaseQuantity, DecreaseQuantity, DeleteCart }) {
                           />
                         </td>
                         <td>
-                          {Number(item.price).toLocaleString("vi-VN")} VNĐ
+                          {Number(item.price).toLocaleString("vi-VN")}{" "}
+                          <span className="underline">đ</span>
                         </td>
                         <td>
                           <span
@@ -97,13 +98,19 @@ function Shopping({ items, IncreaseQuantity, DecreaseQuantity, DeleteCart }) {
                             +
                           </span>
                         </td>
-                        <td>{TotalPrice(item.price, item.quantity)} VNĐ</td>
+                        <td>
+                          {TotalPrice(item.price, item.quantity)}{" "}
+                          <span className="underline">đ</span>
+                        </td>
                       </tr>
                     );
                   })}
                   <tr>
                     <td colSpan="5">Tổng tiền giỏ hàng</td>
-                    <td>{Number(TotalCart).toLocaleString("vi-VN")} VNĐ</td>
+                    <td>
+                      {Number(TotalCart).toLocaleString("vi-VN")}{" "}
+                      <span className="underline">đ</span>
+                    </td>
                   </tr>
                 </tbody>
               </table>
@@ -129,20 +136,26 @@ function Shopping({ items, IncreaseQuantity, DecreaseQuantity, DeleteCart }) {
           </div>
           <div className="money">
             <div className="sum-cost-products">
-              <p>Tạm tính: {Number(TotalCart).toLocaleString("vi-VN")} VNĐ</p>
+              <p>
+                Tạm tính: {Number(TotalCart).toLocaleString("vi-VN")}{" "}
+                <span className="underline">đ</span>
+              </p>
             </div>
             <div className="ship-cost">
-              <p>Phí vận chuyển: 30.000 VNĐ</p>
+              <p>
+                Phí vận chuyển: 30.000 <span className="underline">đ</span>
+              </p>
             </div>
             <hr />
             <div className="sum-cost">
               <p>
-                Tổng: {Number(TotalCart + 30000).toLocaleString("vi-VN")} VNĐ
+                Tổng: {Number(TotalCart + 30000).toLocaleString("vi-VN")}{" "}
+                <span className="underline">đ</span>
               </p>
             </div>
           </div>
           <NavLink to="/ShipAddress">
-            <button className="buy-btn">Mua hàng</button>
+            <button className="shopping-buy-btn">Mua hàng</button>
           </NavLink>
         </div>
       </div>

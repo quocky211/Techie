@@ -58,6 +58,9 @@
     border-radius: 20px;
     text-align: justify;
 }
+.product-detail p{
+    font-size: 18px;
+}
 .related-products{
     background-color: white;
     margin-top: 20px;

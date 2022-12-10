@@ -57,6 +57,7 @@ export function ProductDetails(props) {
                                 </span>
                               </p>
                               <h2 className="decrease-price">
+                                Khuyến mãi còn:{" "}
                                 {vnd.format(items.price - 100000)}
                               </h2>
                               <div className="btn-footer">
