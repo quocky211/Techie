@@ -1,5 +1,4 @@
 import "./MainPage.css";
-import data from '../data';
 import ContainerItem from "../ContainerItem";
 import Slideshow from "../Slideshow/Slideshow";
 import { useState, useEffect } from "react";
