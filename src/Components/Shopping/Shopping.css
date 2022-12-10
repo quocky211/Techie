@@ -5,6 +5,12 @@
     display: flex;
     text-align: justify;
 }
+.main-container .underline{
+    text-decoration: underline;
+}
+.main h1{
+    margin: 20px 0;
+}
 .row{
     text-align: center;
 }
@@ -38,19 +44,19 @@
     float:right;
 } 
 .money p{
-    font-size: 18px;
+    font-size: 20px;
     margin: 15px 0;
 }
-.buy-btn{
+.shopping-buy-btn{
     text-align: center!;
     font-size: 18px;
     background-color: #6851A8;
     width: 100%;
     color: white;
-    padding: 10px;
+    padding: 15px;
     border: #0b3296 2px solid;
     border-radius: 10px;
 }
-.buy-btn:hover{
+.shopping-buy-btn:hover{
     background-color: #5A82E7;
 }
