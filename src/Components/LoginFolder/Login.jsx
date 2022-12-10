@@ -1,12 +1,25 @@
 import "./Login.css";
+import { useNavigate } from "react-router-dom";
 import FbIcon from "../Images/facebook.ico";
 import GgIcon from "../Images/google.ico";
 import logo from "../Images/logo.webp";
 import { Link } from "react-router-dom";
 import { Log_in } from "../../actions";
 import { connect } from "react-redux";
+import { useState } from "react";
 
 function Login(props) {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  let navigate = useNavigate();
+
+  const usernamechange = (event) => {
+    setUsername(event.target.value);
+  };
+  const passwordchange = (event) => {
+    setPassword(event.target.value);
+  };
+
   const fbLogin = () => {
     window.open(
       "https://www.facebook.com/login/",
@@ -22,8 +35,11 @@ function Login(props) {
     );
   };
   const handleClick = () => {
-    props.Log_in();
-    console.log(props.isLoggedin);
+    if (username !== "" && password !== "") {
+      props.Log_in();
+      navigate("/MainPage");
+      console.log(props.isLoggedin);
+    }
   };
   return (
     <div className="loginmain">
@@ -36,15 +52,26 @@ function Login(props) {
         <h3>Đăng nhập</h3>
         <form action="">
           <input
+            value={username}
+            onChange={usernamechange}
             type="text"
-            name=""
+            name="username"
             id=""
             placeholder="Email hoặc số điện thoại"
+            required
           />
-          <input type="text" name="" id="" placeholder="Mật khẩu" />
-          <Link to="/MainPage">
-            <button onClick={() => handleClick()}>Đăng nhập</button>
-          </Link>
+          <input
+            onChange={passwordchange}
+            type="password"
+            value={password}
+            name="password"
+            id=""
+            placeholder="Mật khẩu"
+            required
+          />
+          <button name="submit" type="submit" onClick={() => handleClick()}>
+            Đăng nhập
+          </button>
         </form>
         <br></br>
         <Link to="/Register">
