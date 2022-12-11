@@ -1,4 +1,5 @@
 import { Component } from "react";
+import { Avatar } from "@mui/material";
 import React, { useState } from "react";
 import "./Header.css";
 import logo from "../Images/logo.webp";
@@ -8,18 +9,20 @@ import Searchbar from "../Search/Searchbar";
 import { Log_out } from "../../actions";
 import { useNavigate } from "react-router-dom";
 
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Login from "../LoginFolder/Login";
 import { connect } from "react-redux";
 
 function Header(props) {
   let navigate = useNavigate();
-  var linkCart = "/Login";
-  var loginButtonText = "Đăng nhập";
-  if (props.isLoggedin) {
-    linkCart = "/ShoppingCart";
-    loginButtonText = "Đăng xuất";
+  const [logged_fullName, setlogged_fullName] = useState("admin");
+
+  let headerData = [];
+  headerData = JSON.parse(localStorage.getItem("da_dang_ky"));
+  if (headerData !== null) {
+    headerData.map((item) => {
+      setlogged_fullName(item.fullname);
+    });
   }
+
   function LoginclickHandler() {
     if (props.isLoggedin) {
       props.Log_out();
@@ -52,15 +55,34 @@ function Header(props) {
       <Searchbar />
 
       <div className="header-right">
-        <div className="header-right_item">
-          <Link to={linkCart}>
-            <img src={shoppingIcon} alt="cart" />
-            <span>{props.numberCart}</span>
-          </Link>
-          <button onClick={LoginclickHandler} className="logIn-btn">
-            {loginButtonText}
-          </button>
-        </div>
+        {props.isLoggedin ? (
+          <div className="header-right_item">
+            <Link to="/ShoppingCart">
+              <img src={shoppingIcon} alt="cart" />
+              <span>{props.numberCart}</span>
+            </Link>
+            <Avatar
+              className="avatar_login"
+              src="https://png.pngtree.com/png-vector/20190114/ourlarge/pngtree-vector-avatar-icon-png-image_313572.jpg"
+            />
+            <a href="#" className="logged_username">
+              {logged_fullName}
+            </a>
+            <button onClick={() => LoginclickHandler()} className="logIn-btn">
+              Đăng xuất
+            </button>
+          </div>
+        ) : (
+          <div className="header-right_item">
+            <Link to="/Login">
+              <img src={shoppingIcon} alt="cart" />
+              <span>{props.numberCart}</span>
+            </Link>
+            <button onClick={() => LoginclickHandler()} className="logIn-btn">
+              Đăng nhập
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );
@@ -78,4 +100,3 @@ function mapDispatchToProps(dispatch) {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Header);
-
