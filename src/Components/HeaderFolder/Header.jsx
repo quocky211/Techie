@@ -1,4 +1,5 @@
 import { Component } from "react";
+import { Avatar } from "@mui/material";
 import React, { useState } from "react";
 import "./Header.css";
 import logo from "../Images/logo.webp";
@@ -12,7 +13,15 @@ import { connect } from "react-redux";
 
 function Header(props) {
   let navigate = useNavigate();
-  const [loginButtonText, setloginButtonText] = useState("Đăng nhập");
+  const [logged_fullName, setlogged_fullName] = useState("admin");
+
+  let headerData = [];
+  headerData = JSON.parse(localStorage.getItem("da_dang_ky"));
+  if (headerData !== null) {
+    headerData.map((item) => {
+      setlogged_fullName(item.fullname);
+    });
+  }
 
   function LoginclickHandler() {
     if (props.isLoggedin) {
@@ -52,6 +61,13 @@ function Header(props) {
               <img src={shoppingIcon} alt="cart" />
               <span>{props.numberCart}</span>
             </Link>
+            <Avatar
+              className="avatar_login"
+              src="https://png.pngtree.com/png-vector/20190114/ourlarge/pngtree-vector-avatar-icon-png-image_313572.jpg"
+            />
+            <a href="#" className="logged_username">
+              {logged_fullName}
+            </a>
             <button onClick={() => LoginclickHandler()} className="logIn-btn">
               Đăng xuất
             </button>
