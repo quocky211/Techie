@@ -12,9 +12,9 @@ function Products() {
     const [active, setActive] = useState("ProductsHeadphone");
     return (
         <div>
-            <div className="mainPage_banner">
+            {/* <div className="mainPage_banner"> */}
                 <Slideshow/>
-            </div>
+            {/* </div> */}
 
             <div className="container__products">
                 <div className="container-left">

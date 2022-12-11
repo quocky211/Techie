@@ -19,20 +19,6 @@ function Register() {
   };
 
   const registerHandle = () => {
-    let registered = {
-      email : email,
-      fullname : fullname,
-      password : password,
-      username : username
-    }
-    let storageArray = [];
-
-    if (localStorage.getItem("da_dang_ky") !== null)
-      storageArray = JSON.parse(localStorage.getItem("da_dang_ky"));
-      
-    storageArray.push(registered);
-
-    localStorage.setItem("da_dang_ky", JSON.stringify(storageArray));
     if (
       user.email !== "" &&
       user.fullname !== "" &&

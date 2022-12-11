@@ -2,11 +2,6 @@
 /* .mainPage_banner {
 
 } */
-.mainPage_banner-img {
-    width: 100%;
-    height: 440px;
-    object-fit: cover;
-}
 
 .container__products {
     display: flex;

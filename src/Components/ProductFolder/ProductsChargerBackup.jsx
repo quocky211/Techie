@@ -1,6 +1,5 @@
 import { Component } from "react";
 import React, { useState, useEffect } from "react";
-import data from '../data'
 import "./Products.css";
 import ContainerItem from "../ContainerItem";
 import axios from "axios";

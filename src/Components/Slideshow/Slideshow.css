@@ -13,12 +13,11 @@
   opacity: 0;
   transform: translateX(-50%);
   transition: all 0.5 ease;
-  object-fit: cover;
 }
 .slide img{
   height: 100%;
   width: 100%;
-
+  object-fit: cover;
 }
 .current{
   opacity: 1;
@@ -29,7 +28,8 @@
   border-radius: 50%;
   background: transparent;
   color: black;
-  width: 2rem;
+  width: 32px;
+  min-height: 32px;
   cursor: pointer;
   position: absolute;
   top: 50%;

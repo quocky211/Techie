@@ -7,7 +7,6 @@ import { Link } from "react-router-dom";
 import { Log_in } from "../../actions";
 import { connect } from "react-redux";
 import { useState } from "react";
-import Register from "../Register/Register";
 
 function Login(props) {
   const [username, setUsername] = useState("");
@@ -36,16 +35,11 @@ function Login(props) {
     );
   };
   const handleClick = () => {
-    let currentData = [];
-    currentData = JSON.parse(localStorage.getItem("da_dang_ky"));
-    currentData.map(item => {
-      if (item.username == username && item.password == password) {
-        props.Log_in();
-        navigate("/MainPage");
-        console.log(props.isLoggedin);
-      }
-    })
-    
+    if (username !== "" && password !== "") {
+      props.Log_in();
+      navigate("/MainPage");
+      console.log(props.isLoggedin);
+    }
   };
   return (
     <div className="loginmain">
