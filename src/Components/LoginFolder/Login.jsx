@@ -38,16 +38,14 @@ function Login(props) {
   const handleClick = () => {
     let currentData = [];
     currentData = JSON.parse(localStorage.getItem("da_dang_ky"));
-    const dataInUse = currentData.map(item => {
-      username = item.username;
-      password = item.password;
+    currentData.map(item => {
+      if (item.username == username && item.password == password) {
+        props.Log_in();
+        navigate("/MainPage");
+        console.log(props.isLoggedin);
+      }
     })
-
-    if (username == dataInUse.username && password == dataInUse.password) {
-      props.Log_in();
-      navigate("/MainPage");
-      console.log(props.isLoggedin);
-    }
+    
   };
   return (
     <div className="loginmain">

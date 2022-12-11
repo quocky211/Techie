@@ -16,7 +16,12 @@ import { connect } from "react-redux";
 // https://png.pngtree.com/png-vector/20190114/ourlarge/pngtree-vector-avatar-icon-png-image_313572.jpg
 
 function Header(props) {
-  let logged_userName = JSON.parse(localStorage.getItem("da_dang_ky"));
+  let logged_fullName = "";
+  let headerData = [];
+  headerData = JSON.parse(localStorage.getItem("da_dang_ky"));
+  headerData.map(item => {
+    logged_fullName = item.fullname;
+  })
   let navigate = useNavigate();
   var linkCart = "/Login";
   var loginButtonText = "Đăng nhập";
@@ -66,7 +71,7 @@ function Header(props) {
             className="avatar_login"
             src="https://png.pngtree.com/png-vector/20190114/ourlarge/pngtree-vector-avatar-icon-png-image_313572.jpg"
           />
-          <a href="#" className="logged_username" >{logged_userName.fullname}</a>
+          <a href="#" className="logged_username" >{logged_fullName}</a>
           <button onClick={LoginclickHandler} className="logIn-btn">
             {loginButtonText}
           </button>
