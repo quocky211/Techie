@@ -4,22 +4,14 @@ import FbIcon from "../Images/facebook.ico";
 import GgIcon from "../Images/google.ico";
 import logo from "../Images/logo.webp";
 import { Link } from "react-router-dom";
-import { Log_in } from "../../actions";
+import { Log_in, SetUserFullName } from "../../actions";
 import { connect } from "react-redux";
 import { useState } from "react";
-import Register from "../Register/Register";
 
 function Login(props) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  let navigate = useNavigate();
-
-  const usernamechange = (event) => {
-    setUsername(event.target.value);
-  };
-  const passwordchange = (event) => {
-    setPassword(event.target.value);
-  };
+  const navigate = useNavigate();
 
   const fbLogin = () => {
     window.open(
@@ -35,17 +27,18 @@ function Login(props) {
       "toolbar=0,location=0,menubar=0"
     );
   };
-  const handleClick = () => {
-    let currentData = [];
-    currentData = JSON.parse(localStorage.getItem("da_dang_ky"));
-    currentData.map(item => {
-      if (item.username == username && item.password == password) {
-        props.Log_in();
-        navigate("/MainPage");
-        console.log(props.isLoggedin);
-      }
-    })
-    
+  const handleLogin = (e) => {
+    e.preventDefault();
+    let currentData = JSON.parse(localStorage.getItem("da_dang_ky"));
+    if (currentData !== null) {
+      currentData.map((item) => {
+        if (item.username == username && item.password == password) {
+          props.SetUserFullName(item.fullname);
+          props.Log_in();
+          navigate("/MainPage");
+        }
+      });
+    }
   };
   return (
     <div className="loginmain">
@@ -56,26 +49,24 @@ function Login(props) {
 
       <div className="loginForm">
         <h3>Đăng nhập</h3>
-        <form action="">
+        <form onSubmit={handleLogin}>
           <input
             value={username}
-            onChange={usernamechange}
+            onChange={(e) => setUsername(e.target.value)}
             type="text"
             name="username"
-            id=""
             placeholder="Email hoặc số điện thoại"
             required
           />
           <input
-            onChange={passwordchange}
+            onChange={(e) => setPassword(e.target.value)}
             type="password"
             value={password}
             name="password"
-            id=""
             placeholder="Mật khẩu"
             required
           />
-          <button name="submit" type="submit" onClick={() => handleClick()}>
+          <button name="submit" type="submit">
             Đăng nhập
           </button>
         </form>
@@ -85,11 +76,11 @@ function Login(props) {
         </Link>
         <p>Hoặc đăng nhập bằng</p>
         <div className="loginForm-icon">
-          <button onClick={fbLogin}>
+          <button type="button" onClick={() => fbLogin}>
             <img src={FbIcon} alt="facebook icon" />
             Facebook
           </button>
-          <button onClick={googleLogin}>
+          <button type="button" onClick={() => googleLogin}>
             <img src={GgIcon} alt="facebook icon" />
             Google
           </button>
@@ -102,12 +93,14 @@ function Login(props) {
 const mapStateToProps = (state) => {
   return {
     isLoggedin: state._todoProduct.isLoggedin,
+    userFullname: state._todoProduct.userFullname,
   };
 };
 
 function mapDispatchToProps(dispatch) {
   return {
     Log_in: () => dispatch(Log_in()),
+    SetUserFullName: (payload) => dispatch(SetUserFullName(payload)),
   };
 }
 

@@ -7,6 +7,8 @@ export const DELETE_CART = "DELETE_CART";
 export const OFF_NOTI = "OFF_NOTI";
 export const LOGIN = "LOGIN";
 export const LOGOUT = "LOGOUT";
+export const GETUSERFULLNAME = "GETUSERFULLNAME";
+export const SETUSERFULLNAME = "SETUSERFULLNAME";
 
 /*GET NUMBER CART*/
 export function GetNumberCart() {
@@ -59,6 +61,17 @@ export function Log_in(payload) {
 export function Log_out(payload) {
   return {
     type: "LOGOUT",
+    payload,
+  };
+}
+export function GetUserFullName() {
+  return {
+    type: "GETUSERFULLNAME",
+  };
+}
+export function SetUserFullName(payload) {
+  return {
+    type: "SETUSERFULLNAME",
     payload,
   };
 }

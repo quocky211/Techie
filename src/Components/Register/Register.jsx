@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { NavLink as Link } from "react-router-dom";
 
 function Register() {
-  let navigate = useNavigate();
+  const navigate = useNavigate();
   const [user, setUser] = useState({
     username: "",
     fullname: "",
@@ -18,29 +18,23 @@ function Register() {
     setUser({ ...user, [e.target.name]: e.target.value });
   };
 
-  const registerHandle = () => {
+  const registerHandle = (e) => {
+    e.preventDefault();
     let registered = {
-      email : email,
-      fullname : fullname,
-      password : password,
-      username : username
-    }
+      email: email,
+      fullname: fullname,
+      password: password,
+      username: username,
+    };
     let storageArray = [];
 
     if (localStorage.getItem("da_dang_ky") !== null)
       storageArray = JSON.parse(localStorage.getItem("da_dang_ky"));
-      
+
     storageArray.push(registered);
 
     localStorage.setItem("da_dang_ky", JSON.stringify(storageArray));
-    if (
-      user.email !== "" &&
-      user.fullname !== "" &&
-      user.password !== "" &&
-      user.username !== ""
-    ) {
-      navigate("/Login");
-    }
+    navigate("/Login");
   };
 
   return (
@@ -52,7 +46,7 @@ function Register() {
 
       <div className="regisForm-format">
         <h3>Đăng ký</h3>
-        <form>
+        <form onSubmit={registerHandle}>
           <input
             type="text"
             name="username"
@@ -85,7 +79,7 @@ function Register() {
             onChange={(e) => handleChange(e)}
             required
           />
-          <button onClick={registerHandle} type="submit" name="submit">
+          <button type="submit" name="submit">
             Đăng ký
           </button>
         </form>

@@ -8,6 +8,8 @@ import {
   OFF_NOTI,
   LOGIN,
   LOGOUT,
+  GETUSERFULLNAME,
+  SETUSERFULLNAME,
 } from "../actions";
 let item = [];
 if (localStorage.getItem("gio") !== null)
@@ -17,6 +19,7 @@ let num = 0;
 for (let i = 0; i < item.length; i++) num += item[i].quantity;
 
 const initProduct = {
+  userFullname: "",
   isLoggedin: false,
   numberCart: num,
   Carts: item,
@@ -109,6 +112,15 @@ function todoProduct(state = initProduct, action) {
       return {
         ...state,
       };
+    case GETUSERFULLNAME:
+      return {
+        ...state,
+      };
+    case SETUSERFULLNAME:
+      return {
+        ...state,
+	      userFullname : action.payload
+      };
 
     default:
       return state;
@@ -118,4 +130,3 @@ const ShopApp = combineReducers({
   _todoProduct: todoProduct,
 });
 export default ShopApp;
-
