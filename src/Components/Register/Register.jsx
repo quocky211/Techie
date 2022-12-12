@@ -3,9 +3,16 @@ import React, { useState } from "react";
 import logo from "../Images/logo.webp";
 import { useNavigate } from "react-router-dom";
 import { NavLink as Link } from "react-router-dom";
+import Snackbar from "@mui/material/Snackbar";
+import MuiAlert from "@mui/material/Alert";
+
+const Alert = React.forwardRef(function Alert(props, ref) {
+  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+});
 
 function Register() {
   const navigate = useNavigate();
+  const [open, setOpen] = useState(false);
   const [user, setUser] = useState({
     username: "",
     fullname: "",
@@ -16,6 +23,15 @@ function Register() {
 
   const handleChange = (e) => {
     setUser({ ...user, [e.target.name]: e.target.value });
+  };
+
+  const handleClose = (reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setOpen(false);
+    navigate("/Login");
   };
 
   const registerHandle = (e) => {
@@ -34,60 +50,68 @@ function Register() {
     storageArray.push(registered);
 
     localStorage.setItem("da_dang_ky", JSON.stringify(storageArray));
-    navigate("/Login");
+    setOpen(true);
   };
 
   return (
-    <div className="regismain">
-      <div className="logomain">
-        <img className="logo" src={logo} alt="logo"></img>
-        <p>TechieShop</p>
-      </div>
+    <>
+      <div className="regismain">
+        <div className="logomain">
+          <img className="logo" src={logo} alt="logo"></img>
+          <p>TechieShop</p>
+        </div>
 
-      <div className="regisForm-format">
-        <h3>Đăng ký</h3>
-        <form onSubmit={registerHandle}>
-          <input
-            type="text"
-            name="username"
-            placeholder="Tên đăng nhập"
-            value={username}
-            onChange={(e) => handleChange(e)}
-            required
-          />
-          <input
-            type="text"
-            name="fullname"
-            placeholder="Họ và tên"
-            value={fullname}
-            onChange={(e) => handleChange(e)}
-            required
-          />
-          <input
-            type="email"
-            name="email"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => handleChange(e)}
-            required
-          />
-          <input
-            type="password"
-            name="password"
-            placeholder="Mật khẩu"
-            value={password}
-            onChange={(e) => handleChange(e)}
-            required
-          />
-          <button type="submit" name="submit">
-            Đăng ký
-          </button>
-        </form>
-        <Link to="/Login">
-          <p>Bạn đã có tài khoản? Đăng nhập ngay </p>
-        </Link>
+        <div className="regisForm-format">
+          <h3>Đăng ký</h3>
+          <form onSubmit={registerHandle}>
+            <input
+              type="text"
+              name="username"
+              placeholder="Tên đăng nhập"
+              value={username}
+              onChange={(e) => handleChange(e)}
+              required
+            />
+            <input
+              type="text"
+              name="fullname"
+              placeholder="Họ và tên"
+              value={fullname}
+              onChange={(e) => handleChange(e)}
+              required
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => handleChange(e)}
+              required
+            />
+            <input
+              type="password"
+              name="password"
+              placeholder="Mật khẩu"
+              value={password}
+              onChange={(e) => handleChange(e)}
+              required
+            />
+            <button type="submit" name="submit">
+              Đăng ký
+            </button>
+          </form>
+          <Link to="/Login">
+            <p>Bạn đã có tài khoản? Đăng nhập ngay </p>
+          </Link>
+        </div>
+
       </div>
-    </div>
+      <Snackbar open={open} autoHideDuration={1000} onClose={handleClose}>
+        <Alert onClose={handleClose} severity="success" sx={{ width: "100%" }}>
+          Tạo tài khoản mới thành công
+        </Alert>
+      </Snackbar>
+    </>
   );
 }
 export default Register;

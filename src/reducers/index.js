@@ -103,14 +103,23 @@ function todoProduct(state = initProduct, action) {
         ...state,
       };
     case LOGIN:
-      state.isLoggedin = true;
+      return {
+        ...state,
+        isLoggedin: true,
+      };
+    case LOGOUT:
+      return {
+        ...state,
+        isLoggedin: false,
+      };
+    case GETUSERFULLNAME:
       return {
         ...state,
       };
-    case LOGOUT:
-      state.isLoggedin = false;
+    case SETUSERFULLNAME:
       return {
         ...state,
+        userFullname: action.payload,
       };
     case GETUSERFULLNAME:
       return {

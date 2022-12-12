@@ -6,12 +6,20 @@ import logo from "../Images/logo.webp";
 import { Link } from "react-router-dom";
 import { Log_in, SetUserFullName } from "../../actions";
 import { connect } from "react-redux";
+import { useForm } from "react-hook-form";
+import { Form, Button } from "semantic-ui-react";
 import { useState } from "react";
 
 function Login(props) {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+
+  const [isLoginSuccess, setisLoginSuccess] = useState(true);
   const navigate = useNavigate();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
 
   const fbLogin = () => {
     window.open(
@@ -27,18 +35,25 @@ function Login(props) {
       "toolbar=0,location=0,menubar=0"
     );
   };
-  const handleLogin = (e) => {
-    e.preventDefault();
-    let currentData = JSON.parse(localStorage.getItem("da_dang_ky"));
-    if (currentData !== null) {
-      currentData.map((item) => {
-        if (item.username == username && item.password == password) {
-          props.SetUserFullName(item.fullname);
+
+  const onLogin = (data) => {
+    let userData = JSON.parse(localStorage.getItem("da_dang_ky"));
+    if (userData !== null) {
+      for (const user of userData) {
+        if (
+          user.username === data.username &&
+          user.password === data.password
+        ) {
+          props.SetUserFullName(user.fullname);
           props.Log_in();
           navigate("/MainPage");
+          setisLoginSuccess(true);
+          break;
         }
-      });
+      }
+
     }
+    setisLoginSuccess(false);
   };
   return (
     <div className="loginmain">
@@ -49,27 +64,40 @@ function Login(props) {
 
       <div className="loginForm">
         <h3>Đăng nhập</h3>
-        <form onSubmit={handleLogin}>
-          <input
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            type="text"
-            name="username"
-            placeholder="Email hoặc số điện thoại"
-            required
-          />
-          <input
-            onChange={(e) => setPassword(e.target.value)}
-            type="password"
-            value={password}
-            name="password"
-            placeholder="Mật khẩu"
-            required
-          />
-          <button name="submit" type="submit">
+
+        {isLoginSuccess ? (
+          <></>
+        ) : (
+          <p className="formInputError">Tài khoản hoặc mật khẩu sai</p>
+        )}
+
+        <Form onSubmit={handleSubmit(onLogin)}>
+          <Form.Field className="formInput">
+            <input
+              style={{ borderRadius: "100px" }}
+              {...register("username", { required: true })}
+              placeholder="Tên người dùng"
+              type="text"
+            />
+          </Form.Field>
+          {errors.username && (
+            <p className="formInputError">Tài khoản không hợp lệ</p>
+          )}
+          <Form.Field className="formInput">
+            <input
+              style={{ borderRadius: "100px" }}
+              {...register("password", { required: true })}
+              placeholder="Mật khẩu"
+              type="password"
+            />
+          </Form.Field>
+          {errors.password && (
+            <p className="formInputError">Mật khẩu không hợp lệ</p>
+          )}
+          <Button className="formButton" name="submit" type="submit">
             Đăng nhập
-          </button>
-        </form>
+          </Button>
+        </Form>
         <br></br>
         <Link to="/Register">
           <p>Bạn chưa có tài khoản? Đăng ký ngay</p>

@@ -1,76 +1,88 @@
 .loginForm {
-    background-color: #ccc;
-    width: 25%;
-    height: fit-content;
-    display: block;
-    border: solid 2px black;
-    border-radius: 30px;
+  background-color: #ccc;
+  width: 25%;
+  height: fit-content;
+  display: block;
+  border: solid 2px black;
+  border-radius: 30px;
 }
 .loginForm h3 {
-    padding: 24px;
-    margin: 0;
+  padding: 24px;
+  margin: 0;
 }
 .loginForm p:last-child {
-    margin: 0;
+  margin: 0;
 }
-.loginForm form input {
-    display: block;
-    width: 70%;
-    margin: auto;
-    padding: 12px;
-    margin-bottom: 12px;
-    border-radius: 25px;
-    border: 0;
+.loginForm .formInput {
+  display: block;
+  margin: auto;
+  padding: 12px;
+  margin-bottom: 12px;
+  border: 0;
+  border-radius: 25px;
 }
-.loginForm form button {
-    background-color: #5A82E7;
-    color: white;
-    border-radius:25px ;
-    padding: 10px 0;
-    margin-top: 15px;
+.loginForm .formInput input {
+  height: 4em;
+}
+.loginForm .formButton {
+  background-color: #5a82e7;
+  color: white;
+  height: 3em;
+  border-radius: 25px;
+  padding: 10px 0;
+  margin-top: 15px;
+}
+.loginForm .formButton:hover {
+  background-color: #5175cf;
+  color: white;
 }
 .loginForm-icon {
-display: flex;
-justify-content: space-evenly;    
-padding-left: 20px;
-padding-right: 20px;
-margin-bottom: 15px;
+  display: flex;
+  justify-content: space-evenly;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-bottom: 15px;
 }
 .loginForm-icon button {
-    display: flex;
-    align-items: center;
-
+  display: flex;
+  align-items: center;
 }
 .loginForm-icon button img {
-    padding: 8px;
-    justify-content: center;
+  padding: 8px;
+  justify-content: center;
 }
 
 .loginmain {
-    display: flex;
-    justify-content: space-evenly;
-    background-color: #ccc;
-    height: 70vh;
-    align-items: center;
+  display: flex;
+  justify-content: space-evenly;
+  background-color: #ccc;
+  height: 70vh;
+  align-items: center;
 }
 
 .logo {
-    width: 15vw;
-    height: 19vw;
+  width: 15vw;
+  height: 19vw;
 }
 
 .loginmain button {
-    border: 0;
-    width: 150px;
-    height: auto;
-    justify-content: center;
+  border: 0;
+  width: 150px;
+  height: auto;
+  justify-content: center;
 }
 .loginmain a {
-    color: darkblue;
+  color: darkblue;
 }
 .logomain p {
-    font-weight: 1000;
-    font-size: 80px;
-    margin: 0px;
-    color: darkblue;
+  font-weight: 1000;
+  font-size: 80px;
+  margin: 0px;
+  color: darkblue;
 }
+.formInputError {
+  display: flex;
+  color: red;
+  padding-left: 20px;
+}
+
