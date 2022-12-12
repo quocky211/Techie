@@ -35,16 +35,21 @@ function Login(props) {
   };
   const onLogin = (data) => {
     let userData = JSON.parse(localStorage.getItem("da_dang_ky"));
-    for (const user of userData) {
-      if (user.username === data.username && user.password === data.password) {
-        props.SetUserFullName(user.fullname);
-        props.Log_in();
-        navigate("/MainPage");
-        break;
-      } else {
-        setisLoginSuccess(false);
+    if (userData !== null) {
+      for (const user of userData) {
+        if (
+          user.username === data.username &&
+          user.password === data.password
+        ) {
+          props.SetUserFullName(user.fullname);
+          props.Log_in();
+          navigate("/MainPage");
+          setisLoginSuccess(true);
+          break;
+        }
       }
     }
+    setisLoginSuccess(false);
   };
   return (
     <div className="loginmain">
@@ -55,30 +60,36 @@ function Login(props) {
 
       <div className="loginForm">
         <h3>Đăng nhập</h3>
-        {isLoginSuccess ? <></> : <p>Tài khoản hoặc mật khẩu sai</p>}
+        {isLoginSuccess ? (
+          <></>
+        ) : (
+          <p className="formInputError">Tài khoản hoặc mật khẩu sai</p>
+        )}
 
         <Form onSubmit={handleSubmit(onLogin)}>
-          <Form.Field>
+          <Form.Field className="formInput">
             <input
+              style={{ borderRadius: "100px" }}
               {...register("username", { required: true })}
               placeholder="Tên người dùng"
               type="text"
             />
           </Form.Field>
           {errors.username && (
-            <p style={{ color: "red" }}>Tài khoản không hợp lệ</p>
+            <p className="formInputError">Tài khoản không hợp lệ</p>
           )}
-          <Form.Field>
+          <Form.Field className="formInput">
             <input
+              style={{ borderRadius: "100px" }}
               {...register("password", { required: true })}
               placeholder="Mật khẩu"
               type="password"
             />
           </Form.Field>
           {errors.password && (
-            <p style={{ color: "red" }}>Mật khẩu không hợp lệ</p>
+            <p className="formInputError">Mật khẩu không hợp lệ</p>
           )}
-          <Button name="submit" type="submit">
+          <Button className="formButton" name="submit" type="submit">
             Đăng nhập
           </Button>
         </Form>
