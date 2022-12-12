@@ -11,6 +11,7 @@ import { Form, Button } from "semantic-ui-react";
 import { useState } from "react";
 
 function Login(props) {
+
   const [isLoginSuccess, setisLoginSuccess] = useState(true);
   const navigate = useNavigate();
   const {
@@ -18,6 +19,7 @@ function Login(props) {
     handleSubmit,
     formState: { errors },
   } = useForm();
+
 
   const fbLogin = () => {
     window.open(
@@ -33,6 +35,7 @@ function Login(props) {
       "toolbar=0,location=0,menubar=0"
     );
   };
+
   const onLogin = (data) => {
     let userData = JSON.parse(localStorage.getItem("da_dang_ky"));
     if (userData !== null) {
@@ -48,6 +51,7 @@ function Login(props) {
           break;
         }
       }
+
     }
     setisLoginSuccess(false);
   };
@@ -60,6 +64,7 @@ function Login(props) {
 
       <div className="loginForm">
         <h3>Đăng nhập</h3>
+
         {isLoginSuccess ? (
           <></>
         ) : (

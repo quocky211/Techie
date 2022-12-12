@@ -104,6 +104,7 @@ function Register() {
             <p>Bạn đã có tài khoản? Đăng nhập ngay </p>
           </Link>
         </div>
+
       </div>
       <Snackbar open={open} autoHideDuration={1000} onClose={handleClose}>
         <Alert onClose={handleClose} severity="success" sx={{ width: "100%" }}>

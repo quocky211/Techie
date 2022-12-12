@@ -121,6 +121,15 @@ function todoProduct(state = initProduct, action) {
         ...state,
         userFullname: action.payload,
       };
+    case GETUSERFULLNAME:
+      return {
+        ...state,
+      };
+    case SETUSERFULLNAME:
+      return {
+        ...state,
+	      userFullname : action.payload
+      };
 
     default:
       return state;
