@@ -3,9 +3,13 @@ import React, { useState } from "react";
 import logo from "../Images/logo.webp";
 import { useNavigate } from "react-router-dom";
 import { NavLink as Link } from "react-router-dom";
+import Snackbar from "@mui/material/Snackbar";
+import { useForm } from "react-hook-form";
+import { Form, Button } from "semantic-ui-react";
 
 function Register() {
   const navigate = useNavigate();
+  const [open, setOpen] = useState(false);
   const [user, setUser] = useState({
     username: "",
     fullname: "",
@@ -16,6 +20,14 @@ function Register() {
 
   const handleChange = (e) => {
     setUser({ ...user, [e.target.name]: e.target.value });
+  };
+
+  const handleClose = (reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setOpen(false);
   };
 
   const registerHandle = (e) => {
@@ -34,7 +46,10 @@ function Register() {
     storageArray.push(registered);
 
     localStorage.setItem("da_dang_ky", JSON.stringify(storageArray));
-    navigate("/Login");
+    setOpen(true);
+    setTimeout(function () {
+      navigate("/Login");
+    }, 700);
   };
 
   return (
@@ -87,6 +102,12 @@ function Register() {
           <p>Bạn đã có tài khoản? Đăng nhập ngay </p>
         </Link>
       </div>
+      <Snackbar
+        open={open}
+        autoHideDuration={600}
+        onClose={handleClose}
+        message="Tạo tài khoản mới thành công"
+      />
     </div>
   );
 }
