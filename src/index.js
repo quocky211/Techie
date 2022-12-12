@@ -1,4 +1,5 @@
 import React from "react";
+import "semantic-ui-css/semantic.min.css";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import Products from "./Components/ProductFolder/Products";
@@ -13,11 +14,11 @@ import ShipAddress from "./Components/ShipAddress/ShipAddress";
 import ErrorPage from "./Components/Error/error-page";
 import ProductDetails from "./Components/ProductDetails/ProductDetails";
 
-import {Provider} from 'react-redux';
-import stores  from './stores'
+import { Provider } from "react-redux";
+import stores from "./stores";
 import "bootstrap/dist/css/bootstrap.css";
 
-import Payment from "./Components/Payment/Payment"
+import Payment from "./Components/Payment/Payment";
 
 const router = createBrowserRouter([
   {
@@ -58,8 +59,8 @@ const router = createBrowserRouter([
         element: <ShipAddress />,
       },
       {
-        path:"Payment",
-        element:<Payment/>,
+        path: "Payment",
+        element: <Payment />,
       },
       {
         path: "Products/:productID",
@@ -74,11 +75,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <Provider store={stores}>
-  <React.StrictMode>
-    
+    <React.StrictMode>
       <RouterProvider router={router} />
-    
-    
-  </React.StrictMode>
+    </React.StrictMode>
   </Provider>
 );
