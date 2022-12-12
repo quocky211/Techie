@@ -28,6 +28,7 @@ function Register() {
     }
 
     setOpen(false);
+    navigate("/Login");
   };
 
   const registerHandle = (e) => {
@@ -47,9 +48,6 @@ function Register() {
 
     localStorage.setItem("da_dang_ky", JSON.stringify(storageArray));
     setOpen(true);
-    setTimeout(function () {
-      navigate("/Login");
-    }, 700);
   };
 
   return (
@@ -104,7 +102,7 @@ function Register() {
       </div>
       <Snackbar
         open={open}
-        autoHideDuration={600}
+        autoHideDuration={1000}
         onClose={handleClose}
         message="Tạo tài khoản mới thành công"
       />
