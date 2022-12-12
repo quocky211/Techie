@@ -68,7 +68,7 @@ function Login(props) {
         {isLoginSuccess ? (
           <></>
         ) : (
-          <p className="formInputError">Tài khoản hoặc mật khẩu sai</p>
+          <p className="formInputError">Tài khoản hoặc mật khẩu không chính xác</p>
         )}
 
         <Form onSubmit={handleSubmit(onLogin)}>

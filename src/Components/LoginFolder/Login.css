@@ -17,7 +17,7 @@
   display: block;
   margin: auto;
   padding: 12px;
-  margin-bottom: 12px;
+  margin: 0 !important;
   border: 0;
   border-radius: 25px;
 }
@@ -84,5 +84,6 @@
   display: flex;
   color: red;
   padding-left: 20px;
+  margin: 0 0 12px!important;
 }
 
