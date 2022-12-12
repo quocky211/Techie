@@ -11,7 +11,7 @@ const Alert = React.forwardRef(function Alert(props, ref) {
 function Payment() {
   const navigate = useNavigate();
   const [open, setOpen] = React.useState(false);
-  const [shipoption, setShipoption] = React.useState("cod");
+  const [shipoption, setShipoption] = React.useState("bank");
   const handleRadioChange = (e) => {
     setShipoption(e);
     if (shipoption === "bank") {
@@ -31,7 +31,6 @@ function Payment() {
   };
 
   const refreshPage = () => {
-    localStorage.removeItem("gio");
     setTimeout(() => {
       navigate("/");
     }, 1000);
@@ -57,7 +56,7 @@ function Payment() {
       <div className="form-payment-container">
         <div className="form-payment">
           <input
-            checked={shipoption === "cod"}
+            checked={shipoption === "bank"}
             type="radio"
             name="payment"
             value="bank"
@@ -68,7 +67,7 @@ function Payment() {
 
         <div className="form-payment">
           <input
-            checked={shipoption === "bank"}
+            checked={shipoption === "cod"}
             type="radio"
             name="payment"
             value="cod"
@@ -114,4 +113,3 @@ function Payment() {
 }
 
 export default Payment;
-
